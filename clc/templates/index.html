@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Challenge List Creator</h1>
+<br />
+<br />
+<form action="" method="post">{% csrf_token %}
+<div class="horizontal_form">
+ <div class="header">Create an account</div>
+{% for field in signup_form.visible_fields %}
+	<div class="item">
+	 <div class="label">{{ field.label_tag }}</div>
+	 <div class="data">{{ field }}</div>
+	{% if field.errors %}
+     <div class="ui-widget" style="float:left;padding: .3em">
+	  <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
+	  <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>Hey!</strong> {{ field.errors|join:", " }}</p>
+	  </div>
+	 </div>
+	{% endif %}
+	 <div class="description">{{ field.help_text }}</div>
+	</div>
+{% endfor %}
+{% for hidden in signup_form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+<br />
+<input type="submit" value="Sign me up" style="left:160px;" />
+</form>
+<br />
+<br />
+<form action="" method="post">{% csrf_token %}
+<div class="horizontal_form">
+ <div class="header">Log in</div>
+{% for field in login_form.visible_fields %}
+	<div class="item">
+	 <div class="label">{{ field.label_tag }}</div>
+	 <div class="data">{{ field }}</div>
+	{% if field.errors %}
+     <div class="ui-widget" style="float:left;padding: .3em">
+	  <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
+	  <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>Hey!</strong> {{ field.errors|join:", " }}</p>
+	  </div>
+	 </div>
+	{% endif %}
+	 <div class="description">{{ field.help_text }}</div>
+	</div>
+{% endfor %}
+</div>
+{% for hidden in login_form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+<br />
+<input type="submit" value="Log me in" style="left:160px;" />
+</form>
+<br />
+<br />
+<script type="text/javascript">
+	$(function(){ $( "input:submit" ).button();	});
+</script>
+{% endblock content %}

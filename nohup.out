@@ -1,0 +1,1165 @@
+su: must be run from a terminal
+Traceback (most recent call last):
+  File "./manage.py", line 11, in <module>
+    execute_manager(settings)
+  File "/usr/lib/pymodules/python2.6/django/core/management/__init__.py", line 436, in execute_manager
+    setup_environ(settings_mod)
+  File "/usr/lib/pymodules/python2.6/django/core/management/__init__.py", line 419, in setup_environ
+    project_module = import_module(project_name)
+  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/user/mysite/../mysite/__init__.py", line 1
+SyntaxError: Non-ASCII character '\x8b' in file /home/user/mysite/../mysite/__init__.py on line 1, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+[20/Feb/2011 22:10:48] "GET / HTTP/1.1" 302 0
+[20/Feb/2011 22:10:48] "GET /Sylvain HTTP/1.1" 200 4330
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+[20/Feb/2011 22:11:16] "GET /Sylvain HTTP/1.1" 200 4330
+[20/Feb/2011 22:11:16] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:11:16] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 22:11:25] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:11:26] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:11:28] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:11:29] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:11:31] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:17:13] "GET /media/mysite.tgz HTTP/1.1" 200 30319
+[20/Feb/2011 22:18:45] "GET /Sylvain HTTP/1.1" 200 4355
+[20/Feb/2011 22:18:45] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:18:45] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 22:18:48] "GET /Sylvain HTTP/1.1" 200 4355
+[20/Feb/2011 22:18:48] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:18:48] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:18:48] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:18:48] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:18:49] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:18:49] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:18:49] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:18:49] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:18:50] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:18:56] "GET / HTTP/1.1" 302 0
+[20/Feb/2011 22:18:56] "GET /Sylvain HTTP/1.1" 200 3958
+[20/Feb/2011 22:19:00] "POST /Sylvain HTTP/1.1" 200 4371
+[20/Feb/2011 22:19:05] "POST /Sylvain HTTP/1.1" 200 4662
+[20/Feb/2011 22:19:11] "POST /Sylvain HTTP/1.1" 200 4945
+[20/Feb/2011 22:19:12] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:19:13] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:19:14] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:19:29] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:20:08] "POST /Sylvain HTTP/1.1" 200 4964
+[20/Feb/2011 22:20:08] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:20:08] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:20:08] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:20:08] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:20:09] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:20:09] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:20:09] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:20:09] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:20:11] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:20:12] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:20:32] "POST /Sylvain HTTP/1.1" 200 4688
+[20/Feb/2011 22:20:32] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:20:32] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:20:32] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:20:32] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:20:32] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:20:32] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:20:32] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:20:32] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:20:34] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:20:35] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:20:38] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:21:03] "POST /Sylvain HTTP/1.1" 200 4419
+[20/Feb/2011 22:21:03] "POST /Sylvain HTTP/1.1" 200 4698
+[20/Feb/2011 22:21:04] "POST /Sylvain HTTP/1.1" 200 4977
+[20/Feb/2011 22:21:05] "POST /Sylvain HTTP/1.1" 200 5256
+[20/Feb/2011 22:21:06] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:21:07] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:21:08] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:21:09] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:23:35] "POST /Sylvain HTTP/1.1" 200 4418
+[20/Feb/2011 22:23:36] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:23:36] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:23:36] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:23:36] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:23:36] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:23:36] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:23:36] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:23:36] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:23:36] "GET /media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png HTTP/1.1" 200 125
+[20/Feb/2011 22:23:37] "POST /Sylvain HTTP/1.1" 200 4697
+[20/Feb/2011 22:23:38] "POST /Sylvain HTTP/1.1" 200 4976
+[20/Feb/2011 22:23:39] "POST /Sylvain HTTP/1.1" 200 5255
+[20/Feb/2011 22:23:40] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:23:42] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:23:43] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:23:45] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:23:47] "POST /Sylvain HTTP/1.1" 200 4418
+[20/Feb/2011 22:23:48] "POST /Sylvain HTTP/1.1" 200 4697
+[20/Feb/2011 22:23:49] "POST /Sylvain HTTP/1.1" 200 4976
+[20/Feb/2011 22:23:49] "POST /Sylvain HTTP/1.1" 200 5255
+[20/Feb/2011 22:23:50] "POST /Sylvain HTTP/1.1" 200 5534
+[20/Feb/2011 22:24:05] "POST /Sylvain HTTP/1.1" 200 5816
+[20/Feb/2011 22:24:05] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:24:05] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:24:05] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:24:05] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:24:05] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:24:05] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:24:06] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:24:06] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:24:07] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:24:09] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:24:10] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:24:11] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:24:13] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:26:26] "POST /Sylvain HTTP/1.1" 200 4678
+[20/Feb/2011 22:26:26] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:26:26] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 22:26:28] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:28:42] "POST /Sylvain HTTP/1.1" 200 4680
+[20/Feb/2011 22:28:42] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:28:42] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:28:42] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:28:42] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:28:42] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:28:42] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:28:42] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:28:42] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:28:43] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:28:46] "POST /delete HTTP/1.1" 500 69275
+[20/Feb/2011 22:29:12] "POST /Sylvain HTTP/1.1" 200 4680
+[20/Feb/2011 22:29:12] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:29:12] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:29:12] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:29:12] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:29:12] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:29:12] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:29:12] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:29:12] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:29:13] "POST /Sylvain HTTP/1.1" 200 4959
+[20/Feb/2011 22:29:13] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:29:13] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:29:14] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:29:14] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:29:14] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:29:14] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:29:14] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:29:14] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:29:15] "POST /Sylvain HTTP/1.1" 200 5238
+[20/Feb/2011 22:29:15] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:29:15] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:29:15] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:29:16] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:29:16] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:29:16] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:29:16] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:29:16] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:29:20] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:29:21] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:29:22] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:29:23] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:29:25] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:29:25] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:30:34] "POST /Sylvain HTTP/1.1" 200 4729
+[20/Feb/2011 22:30:34] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:30:34] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:30:34] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:30:34] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:30:34] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:30:34] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:30:34] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:30:34] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:30:36] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:30:38] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:31:13] "POST /Sylvain HTTP/1.1" 200 4457
+[20/Feb/2011 22:31:14] "POST /Sylvain HTTP/1.1" 200 4736
+[20/Feb/2011 22:31:15] "POST /Sylvain HTTP/1.1" 200 5015
+[20/Feb/2011 22:31:17] "POST /Sylvain HTTP/1.1" 200 5294
+[20/Feb/2011 22:31:21] "POST /Sylvain HTTP/1.1" 200 5573
+[20/Feb/2011 22:31:21] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:31:21] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:31:21] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:31:21] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:31:21] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:31:21] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:31:22] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:31:22] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:31:23] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:31:24] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:31:26] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:32:13] "POST /Sylvain HTTP/1.1" 200 5012
+[20/Feb/2011 22:32:13] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:32:13] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:32:13] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:32:13] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:32:14] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:32:14] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:32:14] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:32:14] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:32:15] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:32:16] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:32:18] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:32:22] "POST /Sylvain HTTP/1.1" 200 4454
+[20/Feb/2011 22:32:22] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:32:22] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:32:22] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:32:22] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:32:23] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:32:23] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:32:23] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:32:23] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:32:32] "POST /Sylvain HTTP/1.1" 200 4730
+[20/Feb/2011 22:32:32] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:32:32] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:32:32] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:32:32] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:32:32] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:32:32] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:32:32] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:32:32] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:32:34] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:32:35] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:32:56] "POST /Sylvain HTTP/1.1" 200 4461
+[20/Feb/2011 22:32:56] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:32:56] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:32:56] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:32:56] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:32:56] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:32:56] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:32:56] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:32:56] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:32:57] "POST /Sylvain HTTP/1.1" 200 4740
+[20/Feb/2011 22:32:59] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:38:18] "POST /Sylvain HTTP/1.1" 200 4859
+[20/Feb/2011 22:38:18] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:38:18] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:38:19] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:38:19] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:38:19] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:38:19] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:38:19] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:38:19] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:39:54] "POST /Sylvain HTTP/1.1" 200 5435
+[20/Feb/2011 22:39:54] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:39:54] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 22:39:59] "POST /Sylvain HTTP/1.1" 200 5816
+[20/Feb/2011 22:39:59] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:39:59] "GET /media/css/style.css HTTP/1.1" 200 1135
+[20/Feb/2011 22:39:59] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:39:59] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:39:59] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:39:59] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:39:59] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:39:59] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:40:02] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:41:10] "POST /Sylvain HTTP/1.1" 200 6197
+[20/Feb/2011 22:41:10] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:41:10] "GET /media/css/style.css HTTP/1.1" 200 1168
+[20/Feb/2011 22:41:10] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:41:11] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:41:11] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:41:11] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:41:11] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:41:11] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:41:46] "POST /Sylvain HTTP/1.1" 200 6578
+[20/Feb/2011 22:41:46] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 22:41:46] "GET /media/css/style.css HTTP/1.1" 200 1164
+[20/Feb/2011 22:41:46] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:41:46] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:41:46] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 22:41:46] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:41:46] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:41:46] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 22:42:28] "POST /Sylvain HTTP/1.1" 200 6962
+[20/Feb/2011 22:42:28] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:42:28] "GET /media/css/style.css HTTP/1.1" 200 1202
+[20/Feb/2011 22:42:28] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:42:28] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:42:28] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:42:28] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:42:28] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:42:28] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:43:06] "POST /Sylvain HTTP/1.1" 200 7346
+[20/Feb/2011 22:43:06] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 22:43:06] "GET /media/css/style.css HTTP/1.1" 200 1210
+[20/Feb/2011 22:43:06] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:43:06] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 22:43:06] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 22:43:06] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:43:06] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 22:43:06] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 22:44:28] "POST /Sylvain HTTP/1.1" 200 7730
+[20/Feb/2011 22:44:28] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:44:28] "GET /media/css/style.css HTTP/1.1" 200 1394
+[20/Feb/2011 22:44:29] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:44:29] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:44:29] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:44:29] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:44:29] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:44:29] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:44:40] "POST /Sylvain HTTP/1.1" 200 8106
+[20/Feb/2011 22:44:40] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:44:46] "POST /Sylvain HTTP/1.1" 200 8454
+[20/Feb/2011 22:44:46] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:44:52] "POST /Sylvain HTTP/1.1" 200 8818
+[20/Feb/2011 22:44:52] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:44:53] "POST /Sylvain HTTP/1.1" 200 9182
+[20/Feb/2011 22:44:53] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:44:55] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:44:58] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:45:00] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:45:01] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:45:03] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:45:04] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:45:06] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:45:08] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:45:57] "POST /Sylvain HTTP/1.1" 200 6510
+[20/Feb/2011 22:45:57] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:45:57] "GET /media/css/style.css HTTP/1.1" 200 1398
+[20/Feb/2011 22:45:58] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:45:58] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:45:58] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:45:58] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:45:58] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:45:58] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:46:00] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:46:01] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:46:03] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:46:06] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:46:06] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:46:08] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 22:46:11] "POST /Sylvain HTTP/1.1" 200 4633
+[20/Feb/2011 22:46:11] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:46:12] "POST /Sylvain HTTP/1.1" 200 4994
+[20/Feb/2011 22:46:13] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:46:13] "POST /Sylvain HTTP/1.1" 200 5355
+[20/Feb/2011 22:46:14] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:46:14] "POST /Sylvain HTTP/1.1" 200 5716
+[20/Feb/2011 22:46:14] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:46:15] "POST /Sylvain HTTP/1.1" 200 6077
+[20/Feb/2011 22:46:15] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:51:52] "POST /Sylvain HTTP/1.1" 200 6472
+[20/Feb/2011 22:51:52] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:51:52] "GET /media/css/style.css HTTP/1.1" 200 1456
+[20/Feb/2011 22:51:52] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:51:52] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:51:52] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:51:52] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:51:52] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:51:52] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:51:59] "POST /Sylvain HTTP/1.1" 200 6838
+[20/Feb/2011 22:51:59] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:51:59] "GET /media/css/style.css HTTP/1.1" 200 1456
+[20/Feb/2011 22:51:59] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:51:59] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:51:59] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:51:59] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:51:59] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:51:59] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:52:06] "GET /w00tw00t.at.ISC.SANS.DFind:) HTTP/1.1" 302 0
+[20/Feb/2011 22:52:07] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:52:35] "POST /Sylvain HTTP/1.1" 200 6841
+[20/Feb/2011 22:52:35] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:52:35] "GET /media/css/style.css HTTP/1.1" 200 1456
+[20/Feb/2011 22:52:36] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:52:36] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:52:36] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:52:36] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:52:36] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:52:36] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:53:41] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:53:54] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:55:00] "POST /Sylvain HTTP/1.1" 200 7209
+[20/Feb/2011 22:55:00] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:55:00] "GET /media/css/style.css HTTP/1.1" 200 1468
+[20/Feb/2011 22:55:00] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:55:01] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:55:01] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:55:01] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:55:01] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:55:01] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:55:07] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 22:55:10] "POST /Sylvain HTTP/1.1" 200 7578
+[20/Feb/2011 22:55:12] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:57:27] "POST /Sylvain HTTP/1.1" 200 7574
+[20/Feb/2011 22:57:27] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:57:27] "GET /media/css/style.css HTTP/1.1" 200 1458
+[20/Feb/2011 22:57:27] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:57:27] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:57:28] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:57:28] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:57:28] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:57:28] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:57:32] "POST /save HTTP/1.1" 200 1
+[20/Feb/2011 22:58:22] "POST /Sylvain HTTP/1.1" 200 7943
+[20/Feb/2011 22:58:22] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 22:58:22] "GET /media/css/style.css HTTP/1.1" 200 1458
+[20/Feb/2011 22:58:23] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 22:58:23] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 22:58:24] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 22:58:24] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 22:58:24] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 22:58:24] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 22:58:28] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 22:58:32] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:01:02] "POST /Sylvain HTTP/1.1" 200 7581
+[20/Feb/2011 23:01:02] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 23:01:02] "GET /media/css/style.css HTTP/1.1" 200 1458
+[20/Feb/2011 23:01:02] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 23:01:02] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 23:01:03] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 23:01:03] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 23:01:03] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 23:01:03] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 23:01:26] "POST /Sylvain HTTP/1.1" 200 7949
+[20/Feb/2011 23:01:26] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 23:01:26] "GET /media/css/style.css HTTP/1.1" 200 1458
+[20/Feb/2011 23:01:26] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 23:01:27] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 23:01:27] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 23:01:27] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 23:01:27] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 23:01:27] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 23:02:14] "POST /Sylvain HTTP/1.1" 200 8318
+[20/Feb/2011 23:02:14] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 23:02:14] "GET /media/css/style.css HTTP/1.1" 200 1458
+[20/Feb/2011 23:02:14] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 23:02:14] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 23:02:14] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 23:02:14] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 23:02:14] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 23:02:14] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 23:02:17] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:02:18] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:19] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:20] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:21] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:22] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:23] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:23] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:02:25] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:27] "POST /delete HTTP/1.1" 200 2
+[20/Feb/2011 23:02:31] "POST /Sylvain HTTP/1.1" 200 5003
+[20/Feb/2011 23:02:31] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:32] "POST /Sylvain HTTP/1.1" 200 5369
+[20/Feb/2011 23:02:32] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:32] "POST /Sylvain HTTP/1.1" 200 5734
+[20/Feb/2011 23:02:33] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:33] "POST /Sylvain HTTP/1.1" 200 6100
+[20/Feb/2011 23:02:33] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:34] "POST /Sylvain HTTP/1.1" 200 6465
+[20/Feb/2011 23:02:34] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:35] "POST /Sylvain HTTP/1.1" 200 6831
+[20/Feb/2011 23:02:35] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:37] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:02:39] "GET /Sylvain HTTP/1.1" 200 6448
+[20/Feb/2011 23:02:39] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:39] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[20/Feb/2011 23:02:39] "GET /media/css/style.css HTTP/1.1" 304 0
+[20/Feb/2011 23:02:39] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[20/Feb/2011 23:02:40] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 304 0
+[20/Feb/2011 23:02:40] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[20/Feb/2011 23:02:40] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[20/Feb/2011 23:02:40] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[20/Feb/2011 23:02:42] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:02:46] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:03:03] "GET /Sylvain HTTP/1.1" 200 5717
+[20/Feb/2011 23:03:04] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[20/Feb/2011 23:03:04] "GET /media/css/style.css HTTP/1.1" 200 1357
+[20/Feb/2011 23:03:04] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[20/Feb/2011 23:03:04] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[20/Feb/2011 23:03:04] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[20/Feb/2011 23:03:04] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[20/Feb/2011 23:03:04] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[20/Feb/2011 23:03:04] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[20/Feb/2011 23:03:09] "POST /delete HTTP/1.1" 200 1
+[20/Feb/2011 23:10:10] "GET /robots.txt HTTP/1.1" 302 0
+[20/Feb/2011 23:10:10] "GET /?next=/robots.txt HTTP/1.1" 200 4237
+[20/Feb/2011 23:10:10] "GET / HTTP/1.1" 200 4237
+[20/Feb/2011 23:12:00] "GET http://ppcfinder.net/judge.php HTTP/1.1" 404 1744
+[21/Feb/2011 01:52:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 01:52:51] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 01:53:54] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 01:54:11] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:19:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:19:40] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:20:27] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:20:59] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:45:45] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:45:53] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:47:01] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 02:47:13] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:12:00] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:13:19] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:13:25] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:14:43] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:20:12] "GET http://ppcfinder.net/judge.php HTTP/1.1" 404 1744
+[21/Feb/2011 03:39:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:40:06] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:40:24] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 03:41:25] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:05:49] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:06:17] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:07:04] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:07:36] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:33:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:33:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:34:44] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 04:34:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:00:22] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:00:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:01:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:01:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:27:34] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:27:49] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:28:53] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:29:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:53:54] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:54:51] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:55:10] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 05:56:10] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[21/Feb/2011 06:21:53] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 06:21:55] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 06:23:14] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[21/Feb/2011 06:47:43] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 06:47:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 06:49:02] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[21/Feb/2011 07:12:41] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:13:34] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:14:41] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:16:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:26:14] "GET http://58.218.199.147:7182/judge.php HTTP/1.1" 404 1762
+[21/Feb/2011 07:39:20] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:40:39] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:41:44] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 07:43:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:05:40] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:06:56] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:07:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:09:16] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:32:41] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:34:00] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:34:12] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:35:31] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 08:59:19] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:00:26] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:00:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:01:45] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:25:59] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:27:17] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:27:59] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:29:18] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:53:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:54:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:55:29] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 09:56:48] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:21:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:22:16] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:23:32] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:46:49] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:48:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:48:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 10:49:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 11:13:34] "GET /user/soapCaller.bs HTTP/1.1" 302 0
+[21/Feb/2011 11:14:16] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 11:15:32] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 11:15:35] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 11:16:51] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[21/Feb/2011 11:41:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 11:43:04] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 11:44:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 12:07:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 12:08:42] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 12:11:21] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 12:12:40] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 12:33:21] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 12:34:40] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[21/Feb/2011 12:40:14] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:00:36] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:01:55] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:06:26] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:07:45] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:25:21] "GET /robots.txt HTTP/1.1" 302 0
+[21/Feb/2011 13:25:21] "GET /?next=/robots.txt HTTP/1.1" 200 4237
+[21/Feb/2011 13:25:22] "GET / HTTP/1.1" 200 4237
+[21/Feb/2011 13:27:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:29:06] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:34:04] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:35:24] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 13:56:13] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:00:58] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:02:18] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:03:28] "GET / HTTP/1.1" 200 4237
+[21/Feb/2011 14:03:28] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[21/Feb/2011 14:03:28] "GET /media/css/style.css HTTP/1.1" 200 1357
+[21/Feb/2011 14:03:28] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[21/Feb/2011 14:03:28] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[21/Feb/2011 14:03:28] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[21/Feb/2011 14:03:29] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[21/Feb/2011 14:03:31] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[21/Feb/2011 14:03:34] "GET /media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png HTTP/1.1" 200 125
+[21/Feb/2011 14:03:46] "GET /media/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 200 105
+[21/Feb/2011 14:03:47] "POST / HTTP/1.1" 302 0
+[21/Feb/2011 14:03:47] "GET / HTTP/1.1" 302 0
+[21/Feb/2011 14:03:47] "GET /Toto HTTP/1.1" 200 3994
+[21/Feb/2011 14:04:06] "POST /Toto HTTP/1.1" 200 4682
+[21/Feb/2011 14:04:06] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[21/Feb/2011 14:04:06] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[21/Feb/2011 14:04:06] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[21/Feb/2011 14:04:12] "POST /save HTTP/1.1" 200 2
+[21/Feb/2011 14:04:19] "POST /save HTTP/1.1" 200 2
+[21/Feb/2011 14:04:21] "POST /save HTTP/1.1" 200 2
+[21/Feb/2011 14:21:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:23:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:27:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:28:48] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:48:24] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:49:43] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:54:42] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 14:55:58] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:16:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:17:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:22:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:23:40] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:40:09] "GET http://58.218.199.147:7182/judge.php HTTP/1.1" 404 1762
+[21/Feb/2011 15:42:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:44:16] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:49:07] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 15:50:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 16:09:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 16:11:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 16:16:27] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 16:17:49] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 16:53:33] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 16:54:54] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 17:32:39] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 17:34:00] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 18:25:49] "GET /joss HTTP/1.1" 302 0
+[21/Feb/2011 18:25:49] "GET /?next=/joss HTTP/1.1" 200 4237
+[21/Feb/2011 18:25:49] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[21/Feb/2011 18:25:49] "GET /media/css/style.css HTTP/1.1" 200 1357
+[21/Feb/2011 18:25:49] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[21/Feb/2011 18:25:49] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[21/Feb/2011 18:25:49] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[21/Feb/2011 18:25:50] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[21/Feb/2011 18:25:59] "GET /Sylvain HTTP/1.1" 302 0
+[21/Feb/2011 18:25:59] "GET /?next=/Sylvain HTTP/1.1" 200 4237
+[21/Feb/2011 18:25:59] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[21/Feb/2011 18:52:11] "GET //phpmyadmin/ HTTP/1.1" 302 0
+[21/Feb/2011 18:52:11] "GET //phpMyAdmin/ HTTP/1.1" 302 0
+[21/Feb/2011 18:52:12] "GET //MyAdmin/ HTTP/1.1" 302 0
+[21/Feb/2011 18:52:12] "GET //myadmin/ HTTP/1.1" 302 0
+[21/Feb/2011 18:52:12] "GET //pma/ HTTP/1.1" 302 0
+[21/Feb/2011 18:52:12] "GET //mysql/ HTTP/1.1" 302 0
+[21/Feb/2011 19:21:55] "GET /robots.txt HTTP/1.1" 302 0
+[21/Feb/2011 19:21:56] "GET /?next=/robots.txt HTTP/1.1" 200 4237
+[21/Feb/2011 19:21:56] "GET / HTTP/1.1" 200 4237
+[21/Feb/2011 19:52:21] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 19:53:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 23:10:30] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[21/Feb/2011 23:10:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:05:26] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:05:52] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:22:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:23:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:41:58] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:42:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:59:06] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 01:59:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 02:14:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 02:31:28] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 02:31:52] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 02:46:25] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 02:47:11] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 03:03:49] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 03:04:09] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 03:18:06] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 03:18:54] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 03:33:59] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 03:46:13] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:00:30] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:14:54] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:15:11] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:29:04] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:29:18] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:42:07] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:56:30] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 04:56:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 05:10:55] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 05:11:36] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 05:24:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 05:24:27] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 05:38:34] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 06:05:04] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 06:19:07] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 06:19:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 06:46:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 06:58:32] "GET http://www.colemans.com.au/images/fleet2003.jpg HTTP/1.1" 404 1795
+[22/Feb/2011 06:59:29] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 06:59:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 07:12:29] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 07:12:45] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 07:37:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 07:38:13] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 07:51:37] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 08:03:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 08:03:19] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 08:17:43] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 08:31:15] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 08:31:31] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 08:44:41] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 08:44:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 08:58:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 09:10:38] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 09:23:24] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 09:23:34] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 09:35:18] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 10:01:20] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 10:15:06] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 10:27:32] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 10:27:45] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 10:42:04] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 10:55:44] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 10:55:58] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 11:08:17] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 11:08:31] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 11:21:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 11:48:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 11:49:01] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 12:02:47] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 12:03:01] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 12:17:21] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 12:17:36] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 12:31:35] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 12:31:49] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:01:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:01:22] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:14:55] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:15:11] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:27:23] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:27:37] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:41:19] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:41:33] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:53:37] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 13:54:18] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:07:10] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:07:24] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:19:03] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:19:17] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:31:20] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:31:34] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:44:26] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:56:17] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 14:56:31] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:11:00] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:11:13] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:25:18] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:25:33] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:37:53] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:38:07] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:50:57] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 15:51:11] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:03:29] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:03:43] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:17:02] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:17:16] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:31:46] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:32:26] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:45:53] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 16:46:33] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 17:00:08] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 17:00:22] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 17:15:27] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 562, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python2.6/SocketServer.py", line 617, in __init__
+    self.handle()
+  File "/usr/lib/pymodules/python2.6/django/core/servers/basehttp.py", line 602, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.6/socket.py", line 444, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[22/Feb/2011 17:29:37] "GET /w00tw00t.at.ISC.SANS.test0:) HTTP/1.1" 302 0
+[22/Feb/2011 18:31:45] "GET /robots.txt HTTP/1.1" 302 0
+[22/Feb/2011 18:31:45] "GET /?next=/robots.txt HTTP/1.1" 200 4237
+[22/Feb/2011 18:31:46] "GET / HTTP/1.1" 200 4237
+[22/Feb/2011 23:14:47] "GET /user/soapCaller.bs HTTP/1.1" 302 0
+[22/Feb/2011 23:18:50] "GET / HTTP/1.1" 200 4237
+[22/Feb/2011 23:18:50] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[22/Feb/2011 23:18:50] "GET /media/css/style.css HTTP/1.1" 200 1357
+[22/Feb/2011 23:18:50] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[22/Feb/2011 23:18:50] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[22/Feb/2011 23:18:50] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[22/Feb/2011 23:18:55] "GET /media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png HTTP/1.1" 304 0
+[22/Feb/2011 23:19:00] "GET /media/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 304 0
+[22/Feb/2011 23:19:00] "POST / HTTP/1.1" 302 0
+[22/Feb/2011 23:19:00] "GET / HTTP/1.1" 302 0
+[22/Feb/2011 23:19:00] "GET /joss HTTP/1.1" 200 5012
+[22/Feb/2011 23:19:00] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[22/Feb/2011 23:19:00] "GET /media/css/style.css HTTP/1.1" 304 0
+[22/Feb/2011 23:19:00] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 304 0
+[22/Feb/2011 23:19:00] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[22/Feb/2011 23:19:00] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[22/Feb/2011 23:19:00] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[22/Feb/2011 23:19:00] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[22/Feb/2011 23:19:00] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[22/Feb/2011 23:19:25] "POST /joss HTTP/1.1" 200 5412
+[22/Feb/2011 23:19:28] "POST /save HTTP/1.1" 200 1
+[22/Feb/2011 23:19:30] "POST /save HTTP/1.1" 200 2
+[22/Feb/2011 23:19:35] "POST /save HTTP/1.1" 200 2
+[22/Feb/2011 23:19:46] "POST /save HTTP/1.1" 200 2
+[22/Feb/2011 23:20:05] "POST /save HTTP/1.1" 200 2
+[22/Feb/2011 23:20:10] "POST /delete HTTP/1.1" 200 1
+[22/Feb/2011 23:20:11] "POST /delete HTTP/1.1" 200 1
+[22/Feb/2011 23:20:15] "POST /save HTTP/1.1" 200 2
+[23/Feb/2011 00:56:17] "GET /robots.txt HTTP/1.1" 302 0
+[23/Feb/2011 00:56:17] "GET /?next=/robots.txt HTTP/1.1" 200 4237
+[23/Feb/2011 00:56:18] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 01:25:40] "GET / HTTP/1.0" 200 4237
+[23/Feb/2011 01:25:46] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[23/Feb/2011 03:38:15] "GET /robots.txt HTTP/1.1" 302 0
+[23/Feb/2011 03:38:16] "GET /?next=/robots.txt HTTP/1.1" 200 4237
+[23/Feb/2011 03:38:16] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 03:38:17] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[23/Feb/2011 03:38:17] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[23/Feb/2011 04:42:09] "GET http://www.travelimgusa.com/ip.php HTTP/1.1" 404 1756
+[23/Feb/2011 08:55:33] "GET /robots.txt HTTP/1.0" 302 0
+[23/Feb/2011 08:55:34] "GET /?next=/robots.txt HTTP/1.0" 200 4237
+[23/Feb/2011 08:55:34] "GET / HTTP/1.0" 200 4237
+[23/Feb/2011 12:03:07] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 12:03:07] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 200 34133
+[23/Feb/2011 12:03:07] "GET /media/css/style.css HTTP/1.1" 200 1357
+[23/Feb/2011 12:03:07] "GET /media/js/jquery-1.4.4.min.js HTTP/1.1" 200 78601
+[23/Feb/2011 12:03:07] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 200 207146
+[23/Feb/2011 12:03:07] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 200 104
+[23/Feb/2011 12:03:08] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[23/Feb/2011 12:03:08] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[23/Feb/2011 12:03:09] "GET /?next=/favicon.ico HTTP/1.1" 200 4237
+[23/Feb/2011 12:03:12] "GET /media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png HTTP/1.1" 200 125
+[23/Feb/2011 12:04:15] "GET /media/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 200 105
+[23/Feb/2011 12:04:15] "POST / HTTP/1.1" 302 0
+[23/Feb/2011 12:04:16] "GET / HTTP/1.1" 302 0
+[23/Feb/2011 12:04:16] "GET /sly HTTP/1.1" 200 3993
+[23/Feb/2011 12:05:08] "POST /sly HTTP/1.1" 200 4685
+[23/Feb/2011 12:05:08] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[23/Feb/2011 12:05:08] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 200 3762
+[23/Feb/2011 12:05:08] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 200 90
+[23/Feb/2011 12:05:18] "POST /save HTTP/1.1" 200 2
+[23/Feb/2011 12:05:19] "POST /save HTTP/1.1" 200 2
+[23/Feb/2011 12:05:20] "POST /save HTTP/1.1" 200 2
+[23/Feb/2011 12:05:21] "POST /save HTTP/1.1" 200 2
+[23/Feb/2011 12:06:20] "POST /sly HTTP/1.1" 200 5209
+[23/Feb/2011 12:06:53] "POST /sly HTTP/1.1" 200 5680
+[23/Feb/2011 12:26:18] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 12:59:02] "GET / HTTP/1.0" 200 4237
+[23/Feb/2011 13:45:15] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 15:18:49] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 16:09:27] "HEAD / HTTP/1.1" 200 0
+[23/Feb/2011 20:21:18] "HEAD / HTTP/1.1" 200 0
+[23/Feb/2011 20:28:18] "GET / HTTP/1.1" 200 4237
+[23/Feb/2011 20:28:18] "GET /media/css/ui-lightness/jquery-ui-1.8.9.custom.css HTTP/1.1" 304 0
+[23/Feb/2011 20:28:18] "GET /media/css/style.css HTTP/1.1" 200 1357
+[23/Feb/2011 20:28:18] "GET /media/js/jquery-ui-1.8.9.custom.min.js HTTP/1.1" 304 0
+[23/Feb/2011 20:28:19] "GET /media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png HTTP/1.1" 304 0
+[23/Feb/2011 20:29:12] "GET /media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png HTTP/1.1" 304 0
+[23/Feb/2011 20:29:13] "GET /media/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png HTTP/1.1" 304 0
+[23/Feb/2011 20:29:13] "POST / HTTP/1.1" 200 14
+[23/Feb/2011 20:31:45] "GET /sly HTTP/1.1" 302 0
+[23/Feb/2011 20:31:45] "GET /?next=/sly HTTP/1.1" 200 4237
+[23/Feb/2011 20:31:52] "POST /?next=/sly HTTP/1.1" 302 0
+[23/Feb/2011 20:31:52] "GET / HTTP/1.1" 302 0
+[23/Feb/2011 20:31:52] "GET /joss HTTP/1.1" 200 4629
+[23/Feb/2011 20:31:52] "GET /media/css/ui-lightness/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4369
+[23/Feb/2011 20:31:52] "GET /media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png HTTP/1.1" 304 0
+[23/Feb/2011 20:31:52] "GET /media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png HTTP/1.1" 304 0
+[23/Feb/2011 20:32:06] "GET /sly HTTP/1.1" 200 5567
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 59051)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 49232)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('88.66.225.33', 53636)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 63641)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 51637)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 57035)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 53307)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 52475)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 52973)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 53775)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 50816)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('80.172.224.163', 50536)
+----------------------------------------
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+[23/Feb/2011 22:11:34] "GET /joss HTTP/1.1" 200 4715
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Validating models...
+0 errors found
+
+Django version 1.2.3, using settings 'mysite.settings'
+Development server is running at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "./manage.py", line 4, in <module>
+    import settings # Assumed to be in the same directory.
+  File "/home/user/mysite/settings.py", line 89, in <module>
+    ('fr', _('French')),
+NameError: name '_' is not defined

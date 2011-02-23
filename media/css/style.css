@@ -1,0 +1,55 @@
+/* Reset all white-space to 0 for consistency across browsers */
+* { margin:0px; padding:0px; } 
+
+/* Default to some sans-serif font at a specific size */
+body { font-family: Verdana, Arial, sans-serif; font-size:12px;  }
+
+span { display: inline-block; }
+
+
+div#challenges .row .cell{ padding:6px; }
+div#challenges .row .description{ width:260px; }
+div#challenges .row .category{ width:160px; }
+div#challenges .row .progress{ width:160px; }
+div#challenges .row .delete{ width:30px; }
+.progress { width:120px; }
+
+/* Form Styles */
+.horizontal_form .item { margin:10px 4px; }
+.horizontal_form .item .label {
+   width:150px;
+   text-align:right;
+   float:left;
+   font-weight:bold;
+   padding-right:10px;
+   vertical-align:baseline;
+   padding-top:3px;
+   color:#1c94c4;
+ }
+.horizontal_form .item input {
+  border:1px solid #999999;
+  padding:2px 2px;
+  color:#666666;
+  float:left;
+}
+.horizontal_form .item .description {
+   clear:both;
+   padding-left: 160px;
+   font-size:11px;
+   color:#aaaaaa;
+   font-style:italic;
+}
+.horizontal_form .item input:focus {
+  background-color:#eeeeee;
+}
+.header {
+  margin:15px 0px 10px 0px;
+  padding-left:0px;
+  font-size:16px;
+  border-bottom:1px solid #CCCCCC;
+  font-weight:bold;
+  color: #e79425;
+}
+.horizontal_form .button { margin-left:200px; padding-top:10px; }
+.horizontal_form .button input { padding:4px 10px; }
+
