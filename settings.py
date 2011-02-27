@@ -1,9 +1,12 @@
 # Django settings for mysite project.
 import os
+
+
 HERE = os.path.abspath(os.path.dirname(__file__))
 DEBUG = True
 #DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+
 LOGIN_URL = "/"
 ADMINS = (
     ("Sylvain", "sylvain@intuitivo.fr")
@@ -72,9 +75,11 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -85,9 +90,11 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+gettext = lambda s: s
+
 LANGUAGES = (
-    ('fr', _('French')),
-    ('en', _('English')),
+    ('fr', gettext('French')),
+    ('en', gettext('English')),
 )
 
 INSTALLED_APPS = (

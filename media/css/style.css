@@ -7,6 +7,11 @@ body { font-family: Verdana, Arial, sans-serif; font-size:12px;  }
 span { display: inline-block; }
 
 
+div#challenges .table_head{
+	color:#FFFFFF;
+	background-color:#E79425;
+	font-weight:bold;
+}
 div#challenges .row .cell{ padding:6px; }
 div#challenges .row .description{ width:260px; }
 div#challenges .row .category{ width:160px; }

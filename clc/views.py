@@ -6,19 +6,19 @@ from django.db import IntegrityError
 from clc.models import *
 from django.contrib import auth 
 from django.template import RequestContext
-from django.utils.translation import ugettext_lazy as __
+from django.utils.translation import ugettext_lazy as _, get_language
 from django.forms.util import ErrorList
 
 class SignupForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput, help_text=_("Enter the username you wish to use"))
-    email = forms.EmailField(help_text=_("Enter your email address"))
-    password = forms.CharField(widget=forms.PasswordInput, help_text=_("Enter your super-secret password"))
-    password2 = forms.CharField(label="Confirm password", widget=forms.PasswordInput, help_text=_("Enter the same password again"))
+    username = forms.CharField(label=_("user name"), widget=forms.TextInput, help_text=_("Enter the username you wish to use"))
+    email = forms.EmailField(label=_("email"), help_text=_("Enter your email address"))
+    password = forms.CharField(label=_("password"), widget=forms.PasswordInput, help_text=_("Enter your super-secret password"))
+    password2 = forms.CharField(label=_("Confirm password"), widget=forms.PasswordInput, help_text=_("Enter the same password again"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="signup")
 
 class LoginForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput, help_text=_("Enter your username"))
-    password = forms.CharField(widget=forms.PasswordInput, help_text=_("Enter your password"))
+    username = forms.CharField(label=_("username"), widget=forms.TextInput, help_text=_("Enter your username"))
+    password = forms.CharField(label=_("password"), widget=forms.PasswordInput, help_text=_("Enter your password"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="login")
 
 class ChallengeForm(forms.ModelForm):
@@ -26,21 +26,14 @@ class ChallengeForm(forms.ModelForm):
         model = Challenge
         exclude = ('challenge_list','progress')
 
-@login_required
 def display(request, list_name):
-    cl = get_object_or_404(ChallengeList, name=list_name)
-    db_categories = Categories.objects.filter(owner__in=(None, cl.owner))
-    categories = []
-    for cat in db_categories:
-        if request.LANGUAGE_CODE.startswith("fr"):
-            categories.append((cat.id, cat.name_fr))
-        elif request.LANGUAGE_CODE.startswith("en"):
-            categories.append((cat.id, cat.name_en))
+    challenges = Challenge.objects.filter(challenge_list__name=list_name).order_by("category")
+    cl = ChallengeList.objects.get(name=list_name)
     if request.method == 'POST':
         challenge_form = ChallengeForm(request.POST)
         if challenge_form.is_valid():
             try:
-                category = Category.objects.get(name=request.POST["category"])
+                category = Category.objects.get(id=request.POST["category"])
             except Category.DoesNotExist:
                 category = None
             c = Challenge(
@@ -51,7 +44,10 @@ def display(request, list_name):
             c.save()
     else:
         challenge_form = ChallengeForm()
-    return render_to_response('display.html', {'cl': cl, 'challenge_form':challenge_form}, context_instance=RequestContext(request))
+    lang=get_language()
+    return render_to_response(
+        'display.html', locals(), context_instance=RequestContext(request)
+    )
 
 @login_required
 def delete(request):
