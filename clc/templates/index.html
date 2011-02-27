@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
 <h1>Challenge List Creator</h1>
 <br />
 <br />
 <form action="" method="post">{% csrf_token %}
 <div class="horizontal_form">
- <div class="header">Create an account</div>
+ <div class="header">{% trans "Create an account" %}</div>
 {% for field in signup_form.visible_fields %}
 	<div class="item">
 	 <div class="label">{{ field.label_tag }}</div>
@@ -13,7 +14,7 @@
 	{% if field.errors %}
      <div class="ui-widget" style="float:left;padding: .3em">
 	  <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
-	  <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>Hey!</strong> {{ field.errors|join:", " }}</p>
+	  <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>{% trans "Hey!" %}</strong> {{ field.errors|join:", " }}</p>
 	  </div>
 	 </div>
 	{% endif %}
@@ -24,13 +25,13 @@
 {{ hidden }}
 {% endfor %}
 <br />
-<input type="submit" value="Sign me up" style="left:160px;" />
+<input type="submit" value="{% trans "Sign me up" %}" style="left:160px;" />
 </form>
 <br />
 <br />
 <form action="" method="post">{% csrf_token %}
 <div class="horizontal_form">
- <div class="header">Log in</div>
+<div class="header">{% trans "Log in" %}</div>
 {% for field in login_form.visible_fields %}
 	<div class="item">
 	 <div class="label">{{ field.label_tag }}</div>
@@ -38,7 +39,7 @@
 	{% if field.errors %}
      <div class="ui-widget" style="float:left;padding: .3em">
 	  <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
-	  <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>Hey!</strong> {{ field.errors|join:", " }}</p>
+	  <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>{% trans "Hey!" %}</strong> {{ field.errors|join:", " }}</p>
 	  </div>
 	 </div>
 	{% endif %}
@@ -50,7 +51,7 @@
 {{ hidden }}
 {% endfor %}
 <br />
-<input type="submit" value="Log me in" style="left:160px;" />
+<input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
 </form>
 <br />
 <br />

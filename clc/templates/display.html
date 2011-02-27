@@ -1,63 +1,57 @@
-{% load i18n %}
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block content %}
-<h1>{{ cl.name }}</h1>
-<div class="header">Your challenge list</div>
+<h1>{{ list_name }}</h1>
+<div class="header">{% trans "Your challenge list" %}</div>
 <div id="challenges">
+{{ lang }} 
 {% for c in challenges %}
 	{% if forloop.first %}
-		<div class="row">
-			<span class="cell description">Description</span>
-			<span class="cell category">Category</span>
-			<span class="cell progress">Progress</span>
-			<span class="cell delete"><span class="ui-icon ui-icon-trash"></span></span>
+		<div class="row table_head">
+			<span class="cell description">{% trans "Description" %}</span>
+			<span class="cell category">{% trans "Category" %}</span>
+			<span class="cell progress">{% trans "Progress" %}</span>
 		</div>
 	{% endif %}
 	<div class="row {% cycle "even" "odd" %}" id="challenge-row-{{ c.id }}" style="background-color:{{c.category.color}};">
 		<span class="cell description">{{ c.description }}</span>
-		<span class="cell category">
-		{% ifequal LANGUAGE_CODE "fr"%}
-			{{ c.category.name_fr|default_if_none:"---" }}
-		{% else %}
-			{{ c.category.name_en|default_if_none:"---" }}
-		{% endifequal %}
-		</span>
+		<span class="cell category">{{ c.category.name }}</span>
 		<span class="cell progress">
 			<div id="progress-{{ c.id }}" class="progress-slider" value="{{ c.progress }}"></div>
 		</span>
 		<span class="cell delete">
-			<span class="ui-icon ui-icon-trash button delete-button" id="{{ c.id }}"></span>
+			<button class="delete-button" id="delete-{{ c.id }}">{% trans "Delete" %}</button>
 		</span>
 	</div>
 {% endfor %}
 <br /><br />
 
-<div class="header">Add a new challenge</div>
+<div class="header">{% trans "Add a new challenge" %}</div>
 <form action="" method="post">{% csrf_token %}
 <table>
 <tr>
 {% for field in challenge_form.visible_fields %}
 	<th>{{ field.label_tag }}</th>
 {% endfor %}
+	<th></th>
 </tr>
 <tr>
 {% for field in challenge_form.visible_fields %}
 	<td>{{ field }}</td>
 {% endfor %}
+	<td><input type="submit" value="{% trans "Add a new challenge" %}" /></td>
 </tr>
 </table>
 {% for hidden in challenge_form.hidden_fields %}
 {{ hidden }}
 {% endfor %}
-<input type="submit" value="Add a new challenge" />
 </form>
 <br /><br />
 
-<div class="header">Your categories</div>
+<div class="header">{% trans "Your categories" %}</div>
 <br /><br />
 
-<div class="header">Add a new category</div>
+<div class="header">{% trans "Add a new category" %}</div>
 <form action="" method="post">{% csrf_token %}
 <table>
 {% for field in category_form.visible_fields %}
@@ -67,7 +61,7 @@
 {{ hidden }}
 {% endfor %}
 </table>
-<input type="submit" value="Add a new category" />
+<input type="submit" value="{% trans "Add a new category" %}" />
 </form>
 <script type="text/javascript">
 function checkCompleted(t){
@@ -82,10 +76,14 @@ function checkCompleted(t){
 };
 $(function(){ 
 	$("input:submit, .button").button();
-	$(".delete-button").click(function() {
+	$(".delete-button").button({
+		icons: {
+			primary: "ui-icon-trash"
+		}
+	}).click(function() {
 		$.post(
 			"/delete", 
-			{"challenge": this.id}, 
+			{"challenge": this.id.split('-').pop()}, 
 			function(data){
 				$("#challenge-row-"+data).animate({opacity:0, height:0},500, function(){$("#challenge-row-"+data).remove();});
 			}
