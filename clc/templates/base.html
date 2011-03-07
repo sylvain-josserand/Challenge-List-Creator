@@ -1,3 +1,5 @@
+{% load i18n %}
+<h1>Challenge List Creator</h1>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -8,35 +10,34 @@
 		<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.4.4.min.js"></script>
 		<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-ui-1.8.9.custom.min.js"></script>
 		<script type="text/javascript">
-$('html').ajaxSend(function(event, xhr, settings) {
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-    if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
-        // Only send the token to relative URLs i.e. locally.
-        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-    }
-});
+		$('html').ajaxSend(function(event, xhr, settings) {
+			function getCookie(name) {
+				var cookieValue = null;
+				if (document.cookie && document.cookie != '') {
+					var cookies = document.cookie.split(';');
+					for (var i = 0; i < cookies.length; i++) {
+						var cookie = jQuery.trim(cookies[i]);
+						// Does this cookie string begin with the name we want?
+						if (cookie.substring(0, name.length + 1) == (name + '=')) {
+							cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+							break;
+						}
+					}
+				}
+				return cookieValue;
+			}
+			if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+				// Only send the token to relative URLs i.e. locally.
+				xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+			}
+		});
 		</script>
 </head>
-<body style="background-color:#dddddd;">
-<div class="ui-corner-all" style="background-color:#ffffff;width:800px;margin:15px auto;padding:15px;">
+<body>
+<div id="content">
 {% block content %}{% endblock content %}
 <br /><br /><br /><br />
-For questions, suggestions or issues to fix, please contact <a href="mailto:support@intuitivo.fr">support@intuitivo.fr</a>
-</div>
+{% trans 'For questions, suggestions or issues to fix, please contact <a href="mailto:support@intuitivo.fr">support@intuitivo.fr</a>' %}
 </div>
 </body>
 </html>
