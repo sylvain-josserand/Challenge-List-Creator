@@ -9,6 +9,8 @@ urlpatterns = patterns('clc.views',
     (r'^$', 'index'),
     (r'^logout$', 'logout'),
     (r'^delete$', 'delete'),
+    (r'^add$', 'add'),
+    (r'^grab$', 'grab'),
     (r'^save$', 'save'),
     (r'^(?P<list_name>.*)$', 'display'),
     # Example:

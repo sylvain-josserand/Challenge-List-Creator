@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-<h1>{{ list_name }}</h1>
-<div class="header">{% trans "Your challenge list" %}</div>
+{% if not mine %}
+<a class="back-button" href="/">{% trans "Back to my list" %}</a>
+{% endif %}
+<div class="header">{{ header }}</div>
 <div id="challenges">
-{{ lang }} 
 {% for c in challenges %}
 	{% if forloop.first %}
 		<div class="row table_head">
@@ -16,18 +17,26 @@
 	<div class="row {% cycle "even" "odd" %}" id="challenge-row-{{ c.id }}" style="background-color:{{c.category.color}};">
 		<span class="cell description">{{ c.description }}</span>
 		<span class="cell category">{{ c.category.name }}</span>
-		<span class="cell progress">
+		{% if mine %}
+		<span class="cell progress-slider-cell">
 			<div id="progress-{{ c.id }}" class="progress-slider" value="{{ c.progress }}"></div>
+		{% else %}
+		<span class="cell progress-bar-cell">
+			<div id="progress-{{ c.id }}" class="progress-bar" value="{{ c.progress }}"></div>
+		{% endif %}
 		</span>
-		<span class="cell delete">
-			<button class="delete-button" id="delete-{{ c.id }}">{% trans "Delete" %}</button>
+		<span class="cell action">
+			{% if mine %}<button class="delete-challenge-button" id="delete-{{ c.id }}">{% trans "Delete" %}</button>
+			{% else %}{% if logged_in %}<button class="grab-button" id="grab-{{ c.id }}">{% trans "Accept this challenge" %}</button>
+			{% else %}<button class="logme-button" id="logme-{{ c.id }}">{% trans "Add this to YOUR list" %}</button>{% endif %}{% endif %}
 		</span>
 	</div>
 {% endfor %}
+</div>
 <br /><br />
-
+{% if mine %}
 <div class="header">{% trans "Add a new challenge" %}</div>
-<form action="" method="post">{% csrf_token %}
+<form id="add-challenge-form" action="/add" method="post">{% csrf_token %}
 <table>
 <tr>
 {% for field in challenge_form.visible_fields %}
@@ -39,7 +48,7 @@
 {% for field in challenge_form.visible_fields %}
 	<td>{{ field }}</td>
 {% endfor %}
-	<td><input type="submit" value="{% trans "Add a new challenge" %}" /></td>
+	<td><input type="submit" value="{% trans "Add" %}" id="add-challenge"/></td>
 </tr>
 </table>
 {% for hidden in challenge_form.hidden_fields %}
@@ -48,21 +57,52 @@
 </form>
 <br /><br />
 
+{% if categories %}
 <div class="header">{% trans "Your categories" %}</div>
+<div id="categories">
+{% for c in categories %}
+	{% if forloop.first %}
+		<div class="row table_head">
+			<span class="cell name">{% trans "Name" %}</span>
+			<span class="cell color">{% trans "Color" %}</span>
+		</div>
+	{% endif %}
+	<div class="row {% cycle "even" "odd" %}" id="category-row-{{ c.id }}" style="background-color:{{c.color}};">
+		<span class="cell name">{{ c.name }}</span>
+		<span class="cell color">{{ c.color }}</span>
+		<span class="cell action">
+			<button class="delete-category-button" id="delete-{{ c.id }}">{% trans "Delete" %}</button>
+		</span>
+	</div>
+{% endfor %}
+</div>
 <br /><br />
+{% endif %}
 
 <div class="header">{% trans "Add a new category" %}</div>
-<form action="" method="post">{% csrf_token %}
+<form id="add-category-form" action="/add" method="post">{% csrf_token %}
 <table>
+<tr>
 {% for field in category_form.visible_fields %}
-	<tr><th>{{ field.label_tag }}</th><td>{{ field }}</td><td>{{ field.errors }}</td></tr>
+	<th>{{ field.label_tag }}</th>
 {% endfor %}
+	<th></th>
+</tr>
+<tr>
+{% for field in category_form.visible_fields %}
+	<td>{{ field }}</td>
+{% endfor %}
+	<td><input type="submit" value="{% trans "Add" %}" id="add-category"/></td>
+</tr>
+</table>
 {% for hidden in category_form.hidden_fields %}
 {{ hidden }}
 {% endfor %}
-</table>
-<input type="submit" value="{% trans "Add a new category" %}" />
 </form>
+{% else %}
+<a class="back-button" href="/">{% trans "Back to my list" %}</a>
+{% endif %}
+
 <script type="text/javascript">
 function checkCompleted(t){
 		if ($(t).slider("value") == 100) {
@@ -74,9 +114,32 @@ function checkCompleted(t){
 			$(t).children(".ui-slider-handle").css("border-color", "");
 		}
 };
-$(function(){ 
-	$("input:submit, .button").button();
-	$(".delete-button").button({
+$(function(){
+	$("#add-challenge").button();
+	$("#add-challenge-form").submit(function(){
+		$.post(
+			"/add", 
+			$(this).serialize(), 
+			function(){location.reload();}
+		);
+		return false;
+	});
+	$("#add-category").button();
+	$("#add-category-form").submit(function(){
+		$.post(
+			"/add", 
+			$(this).serialize(),
+			function(){location.reload();}
+		);
+		return false;
+	});
+	$(".back-button").button({
+		icons: {
+			primary: "ui-icon-arrowthick-1-w",
+			secondary: "ui-icon-script"
+		}
+	});
+	$(".delete-challenge-button").button({
 		icons: {
 			primary: "ui-icon-trash"
 		}
@@ -85,11 +148,42 @@ $(function(){
 			"/delete", 
 			{"challenge": this.id.split('-').pop()}, 
 			function(data){
-				$("#challenge-row-"+data).animate({opacity:0, height:0},500, function(){$("#challenge-row-"+data).remove();});
+				$("#challenge-row-"+data).animate({opacity:0}, 250).animate({height:0},250, function(){$("#challenge-row-"+data).remove();});
 			}
 		);
 	});
-	$(".progress-slider").each(function(i){
+	$(".delete-category-button").button({
+		icons: {
+			primary: "ui-icon-trash"
+		}
+	}).click(function() {
+		$.post(
+			"/delete", 
+			{"category": this.id.split('-').pop()}, 
+			function(data){
+				$("#category-row-"+data).animate({opacity:0},250).animate({height:0},250, function(){$("#category-row-"+data).remove();});
+			}
+		);
+	});
+	$(".logme-button").button({
+		icons: {
+			primary: "ui-icon-lightbulb"
+		}
+	});
+	$(".grab-button").button({
+		icons: {
+			primary: "ui-icon-lightbulb"
+		}
+	}).click(function() {
+		$.post(
+			"/add", 
+			{"challenge": this.id.split('-').pop()}, 
+			function(data){
+				$("#challenge-row-"+data).fadeOut(500).fadeIn(500);
+			}
+		);
+	});
+	$(".progress-slider").each(function(){
 		$(this).slider({
 			orientation: "horizontal",
 			range: "min",
@@ -105,6 +199,11 @@ $(function(){
 			}
 		});
 		checkCompleted(this);
+	});
+	$(".progress-bar").each(function(index, item){
+		$(this).progressbar({
+			value: parseInt($(item).attr("value")),
+		});
 	});
 });
 </script>

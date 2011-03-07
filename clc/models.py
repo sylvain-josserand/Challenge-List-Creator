@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils.translation import get_language
+from django.utils.translation import get_language, ugettext_lazy as _
 
 class ChallengeList(models.Model):
     name = models.CharField(max_length=200, unique=True)
@@ -23,8 +23,8 @@ class Category(models.Model):
 
 class Challenge(models.Model):
     challenge_list = models.ForeignKey(ChallengeList, db_index=True, related_name="challenges")
-    description = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, db_index=True, blank=True, null=True)
+    description = models.CharField(_("description"), max_length=200)
+    category = models.ForeignKey(Category, verbose_name=_("category"), db_index=True, blank=True, null=True)
     progress = models.PositiveSmallIntegerField(default=0)
     def __unicode__(self):
         return repr((
