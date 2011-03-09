@@ -16,7 +16,9 @@ class Category(models.Model):
         lambda self:getattr(self, "name_"+get_language(), self.name_en),
         lambda self, value:setattr(self, "name_"+get_language(), value)
     )
-    color = models.CharField(max_length=10)
+    red = models.PositiveSmallIntegerField()
+    green = models.PositiveSmallIntegerField()
+    blue = models.PositiveSmallIntegerField()
     owner = models.ForeignKey(User, db_index=True, blank=True, null=True)
     def __unicode__(self):
         return self.name

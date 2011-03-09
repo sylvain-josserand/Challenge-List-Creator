@@ -14,7 +14,7 @@
 			<span class="cell progress">{% trans "Progress" %}</span>
 		</div>
 	{% endif %}
-	<div class="row {% cycle "even" "odd" %}" id="challenge-row-{{ c.id }}" style="background-color:{{c.category.color}};">
+	<div class="row {% cycle "even" "odd" %}" id="challenge-row-{{ c.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
 		<span class="cell description">{{ c.description }}</span>
 		<span class="cell category">{{ c.category.name }}</span>
 		{% if mine %}
@@ -64,12 +64,11 @@
 	{% if forloop.first %}
 		<div class="row table_head">
 			<span class="cell name">{% trans "Name" %}</span>
-			<span class="cell color">{% trans "Color" %}</span>
+			<span class="cell color">{% trans "Action" %}</span>
 		</div>
 	{% endif %}
-	<div class="row {% cycle "even" "odd" %}" id="category-row-{{ c.id }}" style="background-color:{{c.color}};">
+	<div class="row {% cycle "even" "odd" %}" id="category-row-{{ c.id }}" style="background-color:rgb({{c.red}},{{c.green}},{{c.blue}});">
 		<span class="cell name">{{ c.name }}</span>
-		<span class="cell color">{{ c.color }}</span>
 		<span class="cell action">
 			<button class="delete-category-button" id="delete-{{ c.id }}">{% trans "Delete" %}</button>
 		</span>
@@ -82,15 +81,22 @@
 <div class="header">{% trans "Add a new category" %}</div>
 <form id="add-category-form" action="/add" method="post">{% csrf_token %}
 <table>
-<tr>
 {% for field in category_form.visible_fields %}
+<tr>
 	<th>{{ field.label_tag }}</th>
+	<td>{{ field }}</td>
+</tr>
 {% endfor %}
-	<th></th>
+<tr>
+	<th>{% trans "Color" %}</th>
+	<td><div id="red"></div>
+		<div id="green"></div>
+		<div id="blue"></div>
+		<div id="swatch" class="ui-widget-content ui-corner-all"></div>
+	</td>
 </tr>
 <tr>
 {% for field in category_form.visible_fields %}
-	<td>{{ field }}</td>
 {% endfor %}
 	<td><input type="submit" value="{% trans "Add" %}" id="add-category"/></td>
 </tr>
@@ -114,6 +120,27 @@ function checkCompleted(t){
 			$(t).children(".ui-slider-handle").css("border-color", "");
 		}
 };
+function hexFromRGB(r, g, b) {
+	var hex = [
+		r.toString( 16 ),
+		g.toString( 16 ),
+		b.toString( 16 )
+	];
+	$.each( hex, function( nr, val ) {
+		if ( val.length === 1 ) {
+			hex[ nr ] = "0" + val;
+		}
+	});
+	return hex.join( "" ).toUpperCase();
+}
+function refreshSwatch() {
+	var red = $( "#red" ).slider( "value" ),
+		green = $( "#green" ).slider( "value" ),
+		blue = $( "#blue" ).slider( "value" ),
+		hex = hexFromRGB( red, green, blue );
+	$( "#swatch" ).css( "background-color", "#" + hex );
+}
+
 $(function(){
 	$("#add-challenge").button();
 	$("#add-challenge-form").submit(function(){
@@ -128,8 +155,14 @@ $(function(){
 	$("#add-category-form").submit(function(){
 		$.post(
 			"/add", 
-			$(this).serialize(),
-			function(){location.reload();}
+			{
+				"hidden":"category",
+				"name":$("#id_name").attr( "value" ),
+				"red":$( "#red" ).slider( "value" ),
+				"green":$( "#green" ).slider( "value" ),
+				"blue":$( "#blue" ).slider( "value" )
+			},
+			function(){/*location.reload();*/}
 		);
 		return false;
 	});
@@ -137,6 +170,11 @@ $(function(){
 		icons: {
 			primary: "ui-icon-arrowthick-1-w",
 			secondary: "ui-icon-script"
+		}
+	});
+	$(".logout-button").button({
+		icons: {
+			primary: "ui-icon-power",
 		}
 	});
 	$(".delete-challenge-button").button({
@@ -205,6 +243,18 @@ $(function(){
 			value: parseInt($(item).attr("value")),
 		});
 	});
+	$( "#red, #green, #blue" ).slider({
+		orientation: "horizontal",
+		range: "min",
+		max: 255,
+		value: 127,
+		slide: refreshSwatch,
+		change: refreshSwatch
+	});
+	$( "#red" ).slider( "value", 255 );
+	$( "#green" ).slider( "value", 140 );
+	$( "#blue" ).slider( "value", 60 );
+
 });
 </script>
 {% endblock content %}

@@ -10,8 +10,16 @@ h1 { padding:5px 25px; color:white; text-shadow: #000000 1px 1px 1px; background
 
 span { display: inline-block; }
 
+div#logout {
+	position:absolute;
+	top:0;
+	right:0;
+	padding:5px 25px;
+	width:200px;
+}
 
-div#challenges .table_head{
+
+div .table_head{
 	color:#FFFFFF;
 	background-color:#1c94c4;
 	font-weight:bold;
@@ -67,4 +75,25 @@ div#categories .row .color{ width:260px; }
 }
 .horizontal_form .button { margin-left:200px; padding-top:10px; }
 .horizontal_form .button input { padding:4px 10px; }
+
+/* Color Picker - I see life in colors - Viva los mushrooms*/
+#red, #green, #blue {
+	float: left;
+	clear: left;
+	width: 300px;
+	margin: 15px;
+}
+#swatch {
+	width: 120px;
+	height: 100px;
+	margin-top: 18px;
+	margin-left: 350px;
+	background-image: none;
+}
+#red .ui-slider-range { background: #ef2929; }
+#red .ui-slider-handle { border-color: #ef2929; }
+#green .ui-slider-range { background: #8ae234; }
+#green .ui-slider-handle { border-color: #8ae234; }
+#blue .ui-slider-range { background: #729fcf; }
+#blue .ui-slider-handle { border-color: #729fcf; }
 

@@ -29,7 +29,6 @@ class ChallengeForm(forms.ModelForm):
 
 class CategoryForm(forms.Form):
     name = forms.CharField(label=_("Name"), widget=forms.TextInput, help_text=_("Enter the category name"))
-    color = forms.CharField(label=_("Color"), widget=forms.TextInput, help_text=_("Enter the color (exemple: #ffff00)"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="category")
 
 def display(request, list_name):
@@ -103,7 +102,9 @@ def add(request):
         c = Category(
             owner=request.user, 
             name=request.POST["name"],
-            color=request.POST["color"],
+            red=request.POST["red"],
+            green=request.POST["green"],
+            blue=request.POST["blue"],
         )
         c.save()
         return HttpResponse(c.id)

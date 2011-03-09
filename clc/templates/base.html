@@ -1,5 +1,4 @@
 {% load i18n %}
-<h1>Challenge List Creator</h1>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -34,6 +33,12 @@
 		</script>
 </head>
 <body>
+<h1>Challenge List Creator</h1>
+<div id="logout">
+{% if logged_in %}
+<a class="logout-button" href="/logout">{% trans "Log out" %}</a>
+{% endif %}
+</div>
 <div id="content">
 {% block content %}{% endblock content %}
 <br /><br /><br /><br />
