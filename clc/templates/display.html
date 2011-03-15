@@ -3,6 +3,7 @@
 {% block content %}
 {% if not mine %}
 <a class="back-button" href="/">{% trans "Back to my list" %}</a>
+{% else %}
 {% endif %}
 <div class="header">{{ header }}</div>
 <div id="challenges">
@@ -31,8 +32,13 @@
 			{% else %}<button class="logme-button" id="logme-{{ c.id }}">{% trans "Add this to YOUR list" %}</button>{% endif %}{% endif %}
 		</span>
 	</div>
+{% empty %}
+{% trans "No challenge yet. You can now create a challenge. Just dodo it!" %}
 {% endfor %}
 </div>
+<br /><br />
+<script src="http://connect.facebook.net/{% trans "en_US" %}/all.js#xfbml=1"></script><fb:like href="" show_faces="true" width="450" font=""></fb:like>
+<br /><br />
 <br /><br />
 {% if mine %}
 <div class="header">{% trans "Add a new challenge" %}</div>
