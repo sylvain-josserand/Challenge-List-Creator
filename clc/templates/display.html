@@ -14,7 +14,7 @@
 			<span class="cell progress">{% trans "Progress" %}</span>
 		</div>
 	{% endif %}
-	<div class="row {% cycle "even" "odd" %}" id="challenge-row-{{ c.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
+	<div class="row" id="challenge-row-{{ c.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
 		<span class="cell description">{{ c.description }}</span>
 		<span class="cell category">{{ c.category.name }}</span>
 		{% if mine %}
@@ -162,7 +162,7 @@ $(function(){
 				"green":$( "#green" ).slider( "value" ),
 				"blue":$( "#blue" ).slider( "value" )
 			},
-			function(){/*location.reload();*/}
+			function(){location.reload();}
 		);
 		return false;
 	});
