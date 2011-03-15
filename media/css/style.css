@@ -6,7 +6,7 @@ body { font-family: Verdana, Arial, sans-serif; font-size:12px; }
 
 #content { padding:15px; }
 
-h1 { padding:5px 25px; color:white; text-shadow: #000000 1px 1px 1px; background-color:#f6a828; }
+h1 { padding:5px 5px 5px 5px; color:white; text-shadow: #000000 1px 1px 1px; background-color:#f6a828; }
 
 span { display: inline-block; }
 
@@ -25,9 +25,9 @@ div .table_head{
 	font-weight:bold;
 	font-size:14px;
 }
-.odd{ opacity:0.80; filter:alpha(opacity=80); }
-div#challenges .row .cell{ padding:6px; }
-div#challenges .row .description{ width:260px; }
+div#challenges .row {border-bottom: white 1px solid;}
+div#challenges .row .cell {padding: 6px;}
+div#challenges .row .description{ width:460px; }
 div#challenges .row .category{ width:160px; }
 div#challenges .row .progress-bar-cell{ width:160px; height:14px; }
 div#challenges .row .progress-slider-cell{ width:160px; padding:7px 0 0 0;}
