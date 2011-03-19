@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from clc.models import *
 from django.contrib import auth 
 from django.template import RequestContext
-from django.utils.translation import ugettext_lazy as _, get_language
+from django.utils.translation import ugettext_lazy as _, ugettext as __, get_language
 from django.forms.util import ErrorList
 
 class SignupForm(forms.Form):
@@ -32,13 +32,33 @@ class CategoryForm(forms.Form):
     hidden = forms.CharField(widget=forms.HiddenInput, initial="category")
 
 def display(request, list_name):
-    cl = ChallengeList.objects.get(name=list_name)
+    list_name = list_name.lower()
+    try:
+        cl = ChallengeList.objects.get(name=list_name)
+    except ChallengeList.DoesNotExist:
+        return render_to_response('base.html', {'content':_("Sorry but this challenge list does not exist. Want to create it?<a href='/'>Click here.</a>")})
+        
     challenges = Challenge.objects.filter(challenge_list=cl).order_by("category")
     # Is user logged in?
     logged_in = request.user.is_authenticated()
     
     # Is this my list?
     mine = request.user == cl.owner
+    
+    # My friends' lists
+    if logged_in:
+        if mine:
+            my_cl = cl
+        else:
+            my_cl = ChallengeList.objects.get(owner=request.user)
+        friends = my_cl.friends.all()
+
+    friend = False
+    if mine:
+        friend = True
+    elif cl in friends:
+        friend = True
+
     if mine:
         categories = Category.objects.filter(owner=request.user)
         header = _("Your challenge list")
@@ -54,7 +74,7 @@ def display(request, list_name):
 @login_required
 def delete(request):
     if request.method != 'POST':
-        return HttpResponse(_("You should try a POST request"))
+        return HttpResponse(__("You should try a POST request"))
 
     if "challenge" in request.POST:
         id = request.POST["challenge"]
@@ -66,11 +86,17 @@ def delete(request):
         c = Category.objects.get(id=id)
         c.delete()
         return HttpResponse(id)
+    elif "friend" in request.POST:
+        id = request.POST["friend"]
+        my_cl = ChallengeList.objects.get(owner=request.user)
+        friend = my_cl.friends.get(owner=id)
+        my_cl.friends.remove(friend)
+        return HttpResponse(id)
 
 @login_required
 def save(request):
     if request.method != 'POST':
-        return HttpResponse(_("You should try a POST request"))
+        return HttpResponse(__("You should try a POST request"))
 
     if "challenge" in request.POST:
         c = Challenge.objects.get(id=request.POST["challenge"])
@@ -82,11 +108,11 @@ def save(request):
 @login_required
 def add(request):
     if request.method != 'POST':
-        return HttpResponse(_("You should try a POST request"))
+        return HttpResponse(__("You should try a POST request"))
         
     obj = request.POST.get("hidden", False)
+    cl = ChallengeList.objects.get(owner=request.user)
     if obj == "challenge":    
-        cl = ChallengeList.objects.get(owner=request.user)
         try:
             category = Category.objects.get(id=request.POST["category"])
         except Category.DoesNotExist:
@@ -108,8 +134,13 @@ def add(request):
         )
         c.save()
         return HttpResponse(c.id)
+    elif obj == "friend":
+        friend_cl = ChallengeList.objects.get(name=request.POST["name"])
+        cl.friends.add(friend_cl)
+        return HttpResponse("ok")
+
     elif "challenge" in request.POST:
-        cl = ChallengeList.objects.get(owner=request.user)
+    # Challenge copy
         c = Challenge.objects.get(id=request.POST["challenge"])
         new_c = Challenge(
             challenge_list=cl,
@@ -150,18 +181,21 @@ def index(request):
                 except IntegrityError:
                     user = auth.authenticate(username=username, password=password)
                     if not user:
-                        return HttpResponse(_("A user with the same name already exists. But the password you entered is invalid."))
+                        return HttpResponse(__("A user with the same name already exists. But the password you entered is invalid."))
                 user = auth.authenticate(username=username, password=password)
                 valid_form = True
         if valid_form:
             if user is not None:
                 if user.is_active:
                     auth.login(request, user)
-                    return HttpResponseRedirect("/")
+                    if "next" in request.GET:
+                        return HttpResponseRedirect(request.GET["next"])
+                    else:
+                        return HttpResponseRedirect("/")
                 else:
-                    return HttpResponse(_("Disabled account."))
+                    return HttpResponse(__("Disabled account."))
             else:
-                return HttpResponse(_("Invalid login."))
+                return HttpResponse(__("Invalid login."))
             
     elif request.user.is_authenticated():
         try:
