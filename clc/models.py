@@ -6,6 +6,7 @@ class ChallengeList(models.Model):
     name = models.CharField(max_length=200, unique=True)
     owner = models.OneToOneField(User, db_index=True, unique=True, related_name="challenge_list")
     deadline = models.DateTimeField(blank=True, null=True)
+    friends = models.ManyToManyField("self", symmetrical=False) 
     def __unicode__(self):
         return self.name
 

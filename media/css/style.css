@@ -37,6 +37,12 @@ div#categories .row .cell{ padding:6px; }
 div#categories .row .name{ width:260px; }
 div#categories .row .color{ width:260px; }
 
+div#friends .row .cell{ padding:6px; }
+div#friends .row.even{ background-color:rgb(210,241,255); }
+div#friends .row.odd{ background-color:rgb(170,221,255); }
+div#friends .row .name{ width:260px; }
+div#friends .row .action{ width:260px; }
+
 /* Form Styles */
 .horizontal_form .item { margin:10px 4px; }
 .horizontal_form .item .label {

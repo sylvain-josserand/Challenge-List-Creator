@@ -3,6 +3,9 @@
 {% block content %}
 {% if not mine %}
 <a class="back-button" href="/">{% trans "Back to my list" %}</a>
+	{% if not friend %}
+	<button class="add-friend-button">{% trans "Add to my friends" %}</button>
+	{% endif %}
 {% else %}
 {% endif %}
 <div class="header">{{ header }}</div>
@@ -63,6 +66,26 @@
 </form>
 <br /><br />
 
+{% if friends %}
+<div class="header">{% trans "Your friends" %}</div>
+<div id="friends">
+{% for f in friends %}
+	{% if forloop.first %}
+		<div class="row table_head">
+			<span class="cell name">{% trans "Name" %}</span>
+			<span class="cell color">{% trans "Action" %}</span>
+		</div>
+	{% endif %}
+	<div class="row {% cycle "even" "odd" %}" id="friend-row-{{ f.id }}">
+		<span class="cell name"><a href="/{{ f.name }}">{{ f.name }}</a></span>
+		<span class="cell action">
+			<button class="delete-friend-button" id="delete-friend-{{ f.id }}">{% trans "Delete" %}</button>
+		</span>
+	</div>
+{% endfor %}
+</div>
+<br /><br />
+{% endif %}
 {% if categories %}
 <div class="header">{% trans "Your categories" %}</div>
 <div id="categories">
@@ -209,10 +232,44 @@ $(function(){
 			}
 		);
 	});
+	$(".delete-friend-button").button({
+		icons: {
+			primary: "ui-icon-trash"
+		}
+	}).click(function() {
+		$.post(
+			"/delete", 
+			{"friend": this.id.split('-').pop()}, 
+			function(data){
+				$("#friend-row-"+data).animate({opacity:0},250).animate({height:0},250, function(){$("#friend-row-"+data).remove();});
+			}
+		);
+	});
 	$(".logme-button").button({
 		icons: {
 			primary: "ui-icon-lightbulb"
 		}
+	}).click(function(){
+		window.location = "/?next="+window.location;
+	});
+	$(".add-friend-button").button({
+		icons: {
+			primary: "ui-icon-plus"
+		}
+	}).click(function() {
+		$.post(
+			"/add", 
+			{
+				"hidden":"friend",
+				"name":"{{ list_name }}"
+			},
+			function(data){
+				if (data == "ok"){
+					$(".add-friend-button").fadeOut(250, function(){$(this).remove();});
+				}
+			}
+		);
+		return false;
 	});
 	$(".grab-button").button({
 		icons: {
