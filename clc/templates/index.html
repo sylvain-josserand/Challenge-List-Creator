@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
+<p style="font-size:16pt">{% trans "Challenge List Creator allows you to create your own bucket list and share it with your friends." %}</p><br /><br />
+<p>{% trans 'This site is a work in progress. An idea to improve it? Feel free to contact me at <a href="mailto:sylvain@intuitivo.fr">sylvain@intuitivo.fr</a>. Enjoy!'%}</p><br />
 <form action="" method="post">{% csrf_token %}
 <div class="horizontal_form">
  <div class="header">{% trans "Create an account" %}</div>
