@@ -53,11 +53,11 @@ def display(request, list_name):
             my_cl = ChallengeList.objects.get(owner=request.user)
         friends = my_cl.friends.all()
 
-    friend = False
-    if mine:
-        friend = True
-    elif cl in friends:
-        friend = True
+        friend = False
+        if mine:
+            friend = True
+        elif cl in friends:
+            friend = True
 
     if mine:
         categories = Category.objects.filter(owner=request.user)

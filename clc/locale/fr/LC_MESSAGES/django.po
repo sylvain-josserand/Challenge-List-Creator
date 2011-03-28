@@ -1,0 +1,241 @@
+# -*- encoding:utf-8 -*-
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-27 23:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#: models.py:29
+msgid "description"
+msgstr "Description"
+
+#: models.py:30
+msgid "category"
+msgstr "Catégorie"
+
+#: views.py:13
+msgid "User name"
+msgstr "Nom d'utilisateur"
+
+#: views.py:13
+msgid "Enter the username you wish to use"
+msgstr "Entrez le nom d'utilisateur souhaité"
+
+#: views.py:14
+msgid "Email"
+msgstr "Adresse email"
+
+#: views.py:14
+msgid "Enter your email address"
+msgstr "Entrez votre adresse e-mail"
+
+#: views.py:15 views.py:21
+msgid "Password"
+msgstr "Mot de passe"
+
+#: views.py:15
+msgid "Enter your super-secret password"
+msgstr "Entrez votre mot de passe top-secret"
+
+#: views.py:16
+msgid "Password confirmation"
+msgstr "Confirmation"
+
+#: views.py:16
+msgid "Enter the same password again"
+msgstr "Entrez à nouveau le même mot de passe"
+
+#: views.py:20
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: views.py:20
+msgid "Enter your username"
+msgstr "Entrez votre nom d'utilisateur"
+
+#: views.py:21
+msgid "Enter your password"
+msgstr "Entrez votre mot de passe"
+
+#: views.py:31 templates/display.html:75 templates/display.html.py:95
+msgid "Name"
+msgstr ""
+
+#: views.py:31
+msgid "Enter the category name"
+msgstr "Entrez le nom de la catégorie"
+
+#: views.py:39
+msgid ""
+"Sorry but this challenge list does not exist. Want to create it?<a "
+"href='/'>Click here.</a>"
+msgstr ""
+
+#: views.py:64
+msgid "Your challenge list"
+msgstr "Votre liste de défis"
+
+#: views.py:66
+#, python-format
+msgid "%(name)s's challenge list"
+msgstr "La liste des défis de %(name)s"
+
+#: views.py:174
+msgid "passwords mismatch"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: templates/base.html:51
+msgid "Log out"
+msgstr "Déconnexion"
+
+#: templates/base.html:57
+msgid ""
+"For questions, suggestions or issues to fix, please contact <a href=\"mailto:"
+"support@intuitivo.fr\">support@intuitivo.fr</a>"
+msgstr ""
+"Pour toute question, suggestion ou problème, merci de contacter <a href="
+"\"mailto:support@intuitivo.fr\">support@intuitivo.fr</a>"
+
+#: templates/display.html:5 templates/display.html.py:138
+msgid "Back to my list"
+msgstr "Retour à ma liste"
+
+#: templates/display.html:7
+msgid "Add to my friends"
+msgstr ""
+
+#: templates/display.html:16
+msgid "Description"
+msgstr "Description"
+
+#: templates/display.html:17
+msgid "Category"
+msgstr "Catégorie"
+
+#: templates/display.html:18
+msgid "Progress"
+msgstr "Progrès"
+
+#: templates/display.html:33 templates/display.html.py:82
+#: templates/display.html:102
+msgid "Delete"
+msgstr "Supprimer"
+
+#: templates/display.html:34
+msgid "Accept this challenge"
+msgstr "Accepter ce challenge"
+
+#: templates/display.html:35
+msgid "Add this to YOUR list"
+msgstr "Ajouter à VOTRE liste"
+
+#: templates/display.html:39
+msgid "No challenge yet. You can now create a challenge. Just dodo it!"
+msgstr ""
+"Vous n'avez pas encore de challenge. Vous pouvez maintenant en ajouter. Just "
+"dodo it!"
+
+#: templates/display.html:43
+msgid "en_US"
+msgstr "fr_FR"
+
+#: templates/display.html:47
+msgid "Add a new challenge"
+msgstr "Ajouter un nouveau challenge"
+
+#: templates/display.html:60 templates/display.html.py:130
+msgid "Add"
+msgstr "Ajouter"
+
+#: templates/display.html:70
+msgid "Your friends"
+msgstr "Vos amis"
+
+#: templates/display.html:76 templates/display.html.py:96
+msgid "Action"
+msgstr ""
+
+#: templates/display.html:90
+msgid "Your categories"
+msgstr "Vos catégories"
+
+#: templates/display.html:110
+msgid "Add a new category"
+msgstr "Ajouter une nouvelle catégorie"
+
+#: templates/display.html:120
+msgid "Color"
+msgstr "Couleur"
+
+#: templates/index.html:4
+msgid ""
+"Challenge List Creator allows you to create your own bucket list and share "
+"it with your friends."
+msgstr ""
+"Challenge List Creator vous permet de créer votre liste de défis et de la "
+"partager avec vos amis."
+
+#: templates/index.html:5
+msgid ""
+"This site is a work in progress. An idea to improve it? Feel free to contact "
+"me at <a href=\"mailto:sylvain@intuitivo.fr\">sylvain@intuitivo.fr</a>. "
+"Enjoy!"
+msgstr ""
+"Ce site est en cours de construction. Une idée pour l'améliorer? <a href="
+"\"mailto:sylvain@intuitivo.fr\">sylvain@intuitivo.fr</a>."
+
+#: templates/index.html:8
+msgid "Create an account"
+msgstr "Ouvrir un compte"
+
+#: templates/index.html:16 templates/index.html.py:41
+msgid "Hey!"
+msgstr "Hé!"
+
+#: templates/index.html:27
+msgid "Sign me up"
+msgstr "S'inscrire"
+
+#: templates/index.html:33
+msgid "Log in"
+msgstr "Se connecter"
+
+#: templates/index.html:53
+msgid "Log me in"
+msgstr "Se connecter"
+
+#~ msgid "You should try a POST request"
+#~ msgstr "Essayez plutôt une requête POST"
+
+#~ msgid ""
+#~ "A user with the same name already exists. But the password you entered is "
+#~ "invalid."
+#~ msgstr ""
+#~ "Un utilisateur avec le même nom existe déjà. Mais le mot de passe que "
+#~ "vous avez entré ne correspond pas."
+
+#~ msgid "Disabled account."
+#~ msgstr "Compte désactivé."
+
+#~ msgid "Invalid login."
+#~ msgstr "Login invalide."
+
+#~ msgid "Enter the color (exemple: #ffff00)"
+#~ msgstr "Entrez la couleur (exemple: #ffff00)"
+
+#~ msgid "Confirm password"
+#~ msgstr "Confirmez le mot de passe"
