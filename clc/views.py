@@ -9,6 +9,9 @@ from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _, ugettext as __, get_language
 from django.forms.util import ErrorList
 
+import smtplib
+from email.mime.text import MIMEText
+
 class SignupForm(forms.Form):
     username = forms.CharField(label=_("User name"), widget=forms.TextInput, help_text=_("Enter the username you wish to use"))
     email = forms.EmailField(label=_("Email"), help_text=_("Enter your email address"))
@@ -24,7 +27,7 @@ class LoginForm(forms.Form):
 class ChallengeForm(forms.ModelForm):
     class Meta:
         model = Challenge
-        exclude = ('challenge_list','progress')
+        fields = ('description','category')
     hidden = forms.CharField(widget=forms.HiddenInput, initial="challenge")
 
 class CategoryForm(forms.Form):
@@ -105,6 +108,29 @@ def save(request):
         c.save()
         return HttpResponse(request.POST["challenge"])
 
+def send(request):
+    if request.method != 'POST':
+        return HttpResponse(__("You should try a POST request"))
+    email = request.POST.get("email", "Not specified")
+    if email == "":
+        email = "sylvain.josserand@laposte.net"
+    message = request.POST.get("message", "Not specified")
+    if message == "":
+        message = "Empty message."
+    smtp = smtplib.SMTP("smtp.laposte.net")
+    smtp.login("sylvain.josserand@laposte.net","geranium")
+    mime_msg = MIMEText(message.encode("utf-8"), "plain", "utf-8")
+    mime_msg['From'] = email
+    mime_msg['To'] = "joss82@gmail.com"
+    mime_msg['Subject'] = "[CLC] Message from %s" % email
+    smtp.sendmail(
+        "sylvain.josserand@laposte.net",
+        "joss82@gmail.com",
+        mime_msg.as_string()
+    )
+    smtp.quit()
+    return HttpResponse(0)
+
 @login_required
 def add(request):
     if request.method != 'POST':
@@ -121,6 +147,7 @@ def add(request):
             challenge_list=cl,
             description=request.POST["description"],
             category=category,
+            language=get_language(),
         )
         c.save()
         return HttpResponse(c.id)
@@ -208,7 +235,8 @@ def index(request):
         login_form = LoginForm()
     if not signup_form:
         signup_form = SignupForm()
-    return render_to_response('index.html', {"login_form":login_form, "signup_form":signup_form}, context_instance=RequestContext(request))
+    challenges = Challenge.objects.filter(language=get_language()).order_by("-id")[:20]
+    return render_to_response('index.html', {"login_form":login_form, "signup_form":signup_form, "challenges":challenges}, context_instance=RequestContext(request))
 
 def logout(request):
     auth.logout(request)
