@@ -29,6 +29,7 @@ class Challenge(models.Model):
     description = models.CharField(_("description"), max_length=200)
     category = models.ForeignKey(Category, verbose_name=_("category"), db_index=True, blank=True, null=True)
     progress = models.PositiveSmallIntegerField(default=0)
+    language = models.CharField(max_length=10, null=True, db_index=True)
     def __unicode__(self):
         return repr((
             self.id,
