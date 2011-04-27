@@ -10,6 +10,11 @@ h1 { padding:5px 5px 5px 5px; color:white; text-shadow: #000000 1px 1px 1px; bac
 
 span { display: inline-block; }
 
+
+label, input { display:block; }
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+
 div#logout {
 	position:absolute;
 	top:0;
@@ -18,20 +23,45 @@ div#logout {
 	width:200px;
 }
 
+div .main_container{
+    width: 960px;
+	margin: 0 auto;
+}
 
+div .left_column{
+	float:left;
+	width:400px;
+	margin-left: -960px;
+}
+ 
+div .content_wrapper{
+ float: left;
+ width: 100%;
+}
+  
+div .content_column{
+  margin-left: 400px; /*Set left margin to LeftColumnWidth*/
+  }
+   
 div .table_head{
 	color:#FFFFFF;
 	background-color:#1c94c4;
 	font-weight:bold;
 	font-size:14px;
 }
-div#challenges .row {border-bottom: white 1px solid;}
-div#challenges .row .cell {padding: 6px;}
-div#challenges .row .description{ width:460px; }
-div#challenges .row .category{ width:160px; }
-div#challenges .row .progress-bar-cell{ width:160px; height:14px; }
-div#challenges .row .progress-slider-cell{ width:160px; padding:7px 0 0 0;}
-div#challenges .row .delete{ width:30px; }
+
+div .innertube{
+	margin: 10px;
+	margin-top: 0;
+}
+
+div .row {border-bottom: white 1px solid;}
+div .row .cell {padding: 6px;}
+div .row .description{ width:340px; }
+div .row .category{ width:160px; }
+div .row .progress-bar-cell{ width:160px; height:14px; }
+div .row .progress-slider-cell{ width:160px; padding:7px 0 0 0;}
+div .row .delete{ width:30px; }
 
 div#categories .row .cell{ padding:6px; }
 div#categories .row .name{ width:260px; }
