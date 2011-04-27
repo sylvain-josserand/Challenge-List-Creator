@@ -3,7 +3,7 @@
 <html>
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Challenge List Creator</title>
+		<title>{% trans "Create a bucket list" %}</title>
 		<link type="text/css" href="{{ MEDIA_URL }}css/ui-lightness/jquery-ui-1.8.9.custom.css" rel="stylesheet" />	
 		<link type="text/css" href="{{ MEDIA_URL }}css/style.css" rel="stylesheet" />	
 		<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.4.4.min.js"></script>
@@ -45,7 +45,7 @@
 		</script>
 </head>
 <body>
-<h1><img src="/media/images/logododo.png" style="float:left;"/>Challenge<br />List<br />Creator</h1>
+<a href="/logout" style="text-decoration:none;"><h1><img src="/media/images/logododo.png" style="border:0px;float:left;"/>Challenge<br />List<br />Creator</h1></a>
 <div id="logout">
 {% if logged_in %}
 <a class="logout-button" href="/logout">{% trans "Log out" %}</a>
@@ -53,9 +53,12 @@
 </div>
 <div id="content">
 {% block content %}{% endblock content %}
-<br /><br /><br /><br />
-{% trans 'For questions, suggestions or issues to fix, please contact <a href="mailto:support@intuitivo.fr">support@intuitivo.fr</a>' %}
 </div>
+<p style="clear:both;">
+<br /><br />
+<br /><br />
+<br /><br />
+<center><a href="http://www.intuitivo.fr">Web developer</a></center></p>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

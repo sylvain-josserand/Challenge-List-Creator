@@ -2,7 +2,31 @@
 {% load i18n %}
 {% block content %}
 <p style="font-size:16pt">{% trans "Challenge List Creator allows you to create your own bucket list and share it with your friends." %}</p><br /><br />
-<p>{% trans 'This site is a work in progress. An idea to improve it? Feel free to contact me at <a href="mailto:sylvain@intuitivo.fr">sylvain@intuitivo.fr</a>. Enjoy!'%}</p><br />
+<p>{% trans "This site is a work in progress." %} <a href="" id="ideabox">{% trans "Do you have an idea to improve it ?" %}</a> {% trans "Thanks!"%}</p><br />
+<div class="main_container">
+<div class="content_wrapper">
+<div class="content_column">
+<div class="innertube">
+<h3>{% trans "Some examples of challenges:" %}</h3>
+<br />
+{% for c in challenges %}
+	{% if forloop.first %}
+		<div class="row table_head">
+			<span class="cell description">{% trans "Description" %}</span>
+			<span class="cell category">{% trans "Category" %}</span>
+		</div>
+	{% endif %}
+	<div class="row" id="challenge-row-{{ c.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
+		<span class="cell description"><a href="/{{ c.challenge_list.name }}">{{ c.description }}</a></span>
+		<span class="cell category">{{ c.category.name }}</span>
+	</div>
+{% endfor %}
+<br />
+</div>
+</div>
+</div>
+<div class="left_column">
+<div class="innertube">
 <form action="" method="post">{% csrf_token %}
 <div class="horizontal_form">
  <div class="header">{% trans "Create an account" %}</div>
@@ -52,9 +76,57 @@
 <br />
 <input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
 </form>
+</div>
+</div>
+</div>
+<div id="dialog-form" title="Send a message">
+	<p class="validateTips">{% trans "Email field is required if you want an answer." %}</p>
+
+	<form>
+	<fieldset>
+		<label for="ideabox-email">{% trans "Email" %}</label>
+		<input type="text" name="ideabox-email" id="ideabox-email" value="" class="text ui-widget-content ui-corner-all" />
+		<label for="message">{% trans "Message" %}</label>
+		<textarea cols="50" rows="7" name="ideabox-message" id="ideabox-message" value="" class="text ui-widget-content ui-corner-all"></textarea>
+	</fieldset>
+	</form>
+</div>
 <br />
 <br />
 <script type="text/javascript">
-	$(function(){ $( "input:submit" ).button();	});
+	$(function(){ 
+		$( "input:submit" ).button();
+		$(".logme-button").button({
+			icons: {
+				primary: "ui-icon-lightbulb"
+			}
+		}).click(function(){
+			window.location = "/?next="+window.location;
+		});
+		$( "#dialog-form" ).dialog({
+			autoOpen: false,
+			height: 380,
+			width: 350,
+			modal: true,
+			buttons: {
+				"{% trans "Send a message"%}": function() {
+					$.post(
+						"/send", 
+						{"email": $("#ideabox-email").val(), "message": $("#ideabox-message").val()}, 
+						function(data){
+							$( "#dialog-form" ).dialog( "close" );
+						}
+					);
+				},
+				"{% trans "Cancel" %}": function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+		$("#ideabox").click(function(){
+			$( "#dialog-form" ).dialog( "open" );
+			return false;
+		});
+	});
 </script>
 {% endblock content %}
