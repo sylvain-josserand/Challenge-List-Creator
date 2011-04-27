@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-27 23:23+0200\n"
+"POT-Creation-Date: 2011-04-27 19:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,88 +27,86 @@ msgstr "Description"
 msgid "category"
 msgstr "Catégorie"
 
-#: views.py:13
+#: views.py:16
 msgid "User name"
 msgstr "Nom d'utilisateur"
 
-#: views.py:13
+#: views.py:16
 msgid "Enter the username you wish to use"
 msgstr "Entrez le nom d'utilisateur souhaité"
 
-#: views.py:14
+#: views.py:17 templates/index.html:87
 msgid "Email"
 msgstr "Adresse email"
 
-#: views.py:14
+#: views.py:17
 msgid "Enter your email address"
 msgstr "Entrez votre adresse e-mail"
 
-#: views.py:15 views.py:21
+#: views.py:18 views.py:24
 msgid "Password"
 msgstr "Mot de passe"
 
-#: views.py:15
+#: views.py:18
 msgid "Enter your super-secret password"
 msgstr "Entrez votre mot de passe top-secret"
 
-#: views.py:16
+#: views.py:19
 msgid "Password confirmation"
 msgstr "Confirmation"
 
-#: views.py:16
+#: views.py:19
 msgid "Enter the same password again"
 msgstr "Entrez à nouveau le même mot de passe"
 
-#: views.py:20
+#: views.py:23
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: views.py:20
+#: views.py:23
 msgid "Enter your username"
 msgstr "Entrez votre nom d'utilisateur"
 
-#: views.py:21
+#: views.py:24
 msgid "Enter your password"
 msgstr "Entrez votre mot de passe"
 
-#: views.py:31 templates/display.html:75 templates/display.html.py:95
+#: views.py:34 templates/display.html:75 templates/display.html.py:95
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
-#: views.py:31
+#: views.py:34
 msgid "Enter the category name"
 msgstr "Entrez le nom de la catégorie"
 
-#: views.py:39
+#: views.py:42
 msgid ""
 "Sorry but this challenge list does not exist. Want to create it?<a "
 "href='/'>Click here.</a>"
 msgstr ""
+"Désolé mais cette liste de défis n'existe pas. Voulez-vous la créer?<a "
+"href='/'>Cliquez ici</a>"
 
-#: views.py:64
+#: views.py:67
 msgid "Your challenge list"
 msgstr "Votre liste de défis"
 
-#: views.py:66
+#: views.py:69
 #, python-format
 msgid "%(name)s's challenge list"
 msgstr "La liste des défis de %(name)s"
 
-#: views.py:174
+#: views.py:201
 msgid "passwords mismatch"
 msgstr "Les mots de passe ne correspondent pas"
+
+#: templates/base.html:6
+msgid "Create a bucket list"
+msgstr "Créer une liste de défis"
 
 #: templates/base.html:51
 msgid "Log out"
 msgstr "Déconnexion"
-
-#: templates/base.html:57
-msgid ""
-"For questions, suggestions or issues to fix, please contact <a href=\"mailto:"
-"support@intuitivo.fr\">support@intuitivo.fr</a>"
-msgstr ""
-"Pour toute question, suggestion ou problème, merci de contacter <a href="
-"\"mailto:support@intuitivo.fr\">support@intuitivo.fr</a>"
 
 #: templates/display.html:5 templates/display.html.py:138
 msgid "Back to my list"
@@ -116,13 +114,13 @@ msgstr "Retour à ma liste"
 
 #: templates/display.html:7
 msgid "Add to my friends"
-msgstr ""
+msgstr "Ajouter à mes amis"
 
-#: templates/display.html:16
+#: templates/display.html:16 templates/index.html:15
 msgid "Description"
 msgstr "Description"
 
-#: templates/display.html:17
+#: templates/display.html:17 templates/index.html:16
 msgid "Category"
 msgstr "Catégorie"
 
@@ -167,7 +165,7 @@ msgstr "Vos amis"
 
 #: templates/display.html:76 templates/display.html.py:96
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 #: templates/display.html:90
 msgid "Your categories"
@@ -190,33 +188,71 @@ msgstr ""
 "partager avec vos amis."
 
 #: templates/index.html:5
-msgid ""
-"This site is a work in progress. An idea to improve it? Feel free to contact "
-"me at <a href=\"mailto:sylvain@intuitivo.fr\">sylvain@intuitivo.fr</a>. "
-"Enjoy!"
-msgstr ""
-"Ce site est en cours de construction. Une idée pour l'améliorer? <a href="
-"\"mailto:sylvain@intuitivo.fr\">sylvain@intuitivo.fr</a>."
+msgid "This site is a work in progress."
+msgstr "Ce site est en cours de cuisson."
 
-#: templates/index.html:8
+#: templates/index.html:5
+msgid "Do you have an idea to improve it ?"
+msgstr "Avez-vous une idée pour l'améliorer ?"
+
+#: templates/index.html:5
+msgid "Thanks!"
+msgstr "Merci!"
+
+#: templates/index.html:10
+msgid "Some examples of challenges:"
+msgstr "Quelques exemples de défis:"
+
+#: templates/index.html:32
 msgid "Create an account"
 msgstr "Ouvrir un compte"
 
-#: templates/index.html:16 templates/index.html.py:41
+#: templates/index.html:40 templates/index.html.py:65
 msgid "Hey!"
 msgstr "Hé!"
 
-#: templates/index.html:27
+#: templates/index.html:51
 msgid "Sign me up"
 msgstr "S'inscrire"
 
-#: templates/index.html:33
+#: templates/index.html:57
 msgid "Log in"
 msgstr "Se connecter"
 
-#: templates/index.html:53
+#: templates/index.html:77
 msgid "Log me in"
 msgstr "Se connecter"
+
+#: templates/index.html:83
+msgid "Email field is required if you want an answer."
+msgstr "Entrez votre email si vous voulez une réponse."
+
+#: templates/index.html:89
+msgid "Message"
+msgstr "Message"
+
+#: templates/index.html:112
+msgid "Send a message"
+msgstr "Envoyer"
+
+#: templates/index.html:121
+msgid "Cancel"
+msgstr "Annuler"
+
+#~ msgid ""
+#~ "For questions, suggestions or issues to fix, please contact <a href="
+#~ "\"mailto:support@intuitivo.fr\">support@intuitivo.fr</a>"
+#~ msgstr ""
+#~ "Pour toute question, suggestion ou problème, merci de contacter <a href="
+#~ "\"mailto:support@intuitivo.fr\">support@intuitivo.fr</a>"
+
+#~ msgid ""
+#~ "This site is a work in progress. An idea to improve it? Feel free to "
+#~ "contact me at <a href=\"mailto:sylvain@intuitivo.fr\">sylvain@intuitivo."
+#~ "fr</a>. Enjoy!"
+#~ msgstr ""
+#~ "Ce site est en cours de construction. Une idée pour l'améliorer? <a href="
+#~ "\"mailto:sylvain@intuitivo.fr\">sylvain@intuitivo.fr</a>."
 
 #~ msgid "You should try a POST request"
 #~ msgstr "Essayez plutôt une requête POST"
