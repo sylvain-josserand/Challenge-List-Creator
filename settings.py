@@ -3,8 +3,8 @@ import os
 
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL = "/"
