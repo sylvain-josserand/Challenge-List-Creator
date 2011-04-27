@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 import settings
+from os import getenv 
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,6 +11,7 @@ urlpatterns = patterns('clc.views',
     (r'^logout$', 'logout'),
     (r'^delete$', 'delete'),
     (r'^add$', 'add'),
+    (r'^send$', 'send'),
     (r'^grab$', 'grab'),
     (r'^save$', 'save'),
     (r'^(?P<list_name>.*)$', 'display'),
@@ -22,7 +24,7 @@ urlpatterns = patterns('clc.views',
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
 )
-if settings.DEBUG:
+if getenv("DJANGO_MEDIA", False):
     from django.views.static import serve
     _media_url = settings.MEDIA_URL
     if _media_url.startswith('/'):
