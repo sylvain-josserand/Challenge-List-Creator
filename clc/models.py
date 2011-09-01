@@ -20,21 +20,29 @@ class Category(models.Model):
     red = models.PositiveSmallIntegerField()
     green = models.PositiveSmallIntegerField()
     blue = models.PositiveSmallIntegerField()
-    owner = models.ForeignKey(User, db_index=True, blank=True, null=True)
     def __unicode__(self):
         return self.name
 
 class Challenge(models.Model):
-    challenge_list = models.ForeignKey(ChallengeList, db_index=True, related_name="challenges")
     description = models.CharField(_("description"), max_length=200)
     category = models.ForeignKey(Category, verbose_name=_("category"), db_index=True, blank=True, null=True)
-    progress = models.PositiveSmallIntegerField(default=0)
     language = models.CharField(max_length=10, null=True, db_index=True)
     def __unicode__(self):
         return repr((
             self.id,
-            self.challenge_list,
             self.description,
             self.category,
+            self.language,
+        ))
+
+class ChallengeInstance(models.Model):
+    challenge_list = models.ForeignKey(ChallengeList, db_index=True, related_name="challenges")
+    challenge = models.ForeignKey(Challenge, db_index=True, related_name="instances")
+    progress = models.PositiveSmallIntegerField(default=0)
+    def __unicode__(self):
+        return repr((
+            self.id,
+            self.challenge_list,
+            self.challenge,
             self.progress,
         ))
