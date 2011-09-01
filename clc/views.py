@@ -30,10 +30,6 @@ class ChallengeForm(forms.ModelForm):
         fields = ('description','category')
     hidden = forms.CharField(widget=forms.HiddenInput, initial="challenge")
 
-class CategoryForm(forms.Form):
-    name = forms.CharField(label=_("Name"), widget=forms.TextInput, help_text=_("Enter the category name"))
-    hidden = forms.CharField(widget=forms.HiddenInput, initial="category")
-
 def display(request, list_name):
     list_name = list_name.lower()
     try:
@@ -41,7 +37,9 @@ def display(request, list_name):
     except ChallengeList.DoesNotExist:
         return render_to_response('base.html', {'content':_("Sorry but this challenge list does not exist. Want to create it?<a href='/'>Click here.</a>")})
         
-    challenges = Challenge.objects.filter(challenge_list=cl).order_by("category")
+    from django.db import connection
+    challenge_instances = ChallengeInstance.objects.filter(challenge_list=cl).order_by("challenge__category")
+    queries = connection.queries
     # Is user logged in?
     logged_in = request.user.is_authenticated()
     
@@ -57,19 +55,15 @@ def display(request, list_name):
         friends = my_cl.friends.all()
 
         friend = False
-        if mine:
-            friend = True
-        elif cl in friends:
+        if mine or cl in friends:
             friend = True
 
     if mine:
-        categories = Category.objects.filter(owner=request.user)
         header = _("Your challenge list")
     else:
         header = _("%(name)s's challenge list") % {'name':cl.owner.username.title()}
 
     challenge_form = ChallengeForm()
-    category_form = CategoryForm() 
     return render_to_response(
         'display.html', locals(), context_instance=RequestContext(request)
     )
@@ -79,15 +73,10 @@ def delete(request):
     if request.method != 'POST':
         return HttpResponse(__("You should try a POST request"))
 
-    if "challenge" in request.POST:
-        id = request.POST["challenge"]
-        c = Challenge.objects.get(id=id)
-        c.delete()
-        return HttpResponse(id)
-    elif "category" in request.POST:
-        id = request.POST["category"]
-        c = Category.objects.get(id=id)
-        c.delete()
+    if "challenge_instance" in request.POST:
+        id = request.POST["challenge_instance"]
+        ci = ChallengeInstance.objects.get(id=id)
+        ci.delete()
         return HttpResponse(id)
     elif "friend" in request.POST:
         id = request.POST["friend"]
@@ -101,12 +90,12 @@ def save(request):
     if request.method != 'POST':
         return HttpResponse(__("You should try a POST request"))
 
-    if "challenge" in request.POST:
-        c = Challenge.objects.get(id=request.POST["challenge"])
+    if "challenge_instance" in request.POST:
+        ci = ChallengeInstance.objects.get(id=request.POST["challenge_instance"])
         if "progress" in request.POST:
-            c.progress = int(request.POST["progress"])
-        c.save()
-        return HttpResponse(request.POST["challenge"])
+            ci.progress = int(request.POST["progress"])
+        ci.save()
+        return HttpResponse(request.POST["challenge_instance"])
 
 def send(request):
     if request.method != 'POST':
@@ -136,22 +125,36 @@ def add(request):
     if request.method != 'POST':
         return HttpResponse(__("You should try a POST request"))
         
-    obj = request.POST.get("hidden", False)
+    hidden = request.POST.get("hidden", False)
     cl = ChallengeList.objects.get(owner=request.user)
-    if obj == "challenge":    
+    if hidden == "challenge":
         try:
-            category = Category.objects.get(id=request.POST["category"])
-        except Category.DoesNotExist:
-            category = None
-        c = Challenge(
-            challenge_list=cl,
-            description=request.POST["description"],
-            category=category,
-            language=get_language(),
+            c = Challenge.objects.get( description = request.POST["description"] )
+        except Challenge.DoesNotExist:
+            try:
+                category = Category.objects.get(id=request.POST["category"])
+            except Category.DoesNotExist:
+                category = None
+            c = Challenge(
+                description=request.POST["description"],
+                category=category,
+                language=get_language(),
+            )
+            c.save()
+        ci = ChallengeInstance(
+            challenge = c,
+            challenge_list = cl,
         )
-        c.save()
-        return HttpResponse(c.id)
-    elif obj == "category":    
+        ci.save()
+        return HttpResponse(ci.id)
+    elif hidden == "challenge_instance":
+        original_ci = ChallengeInstance.objects.get(id=request.POST["challenge_instance"])
+        copy_ci = ChallengeInstance(
+            challenge = original_ci.challenge,
+            challenge_list = cl,
+        )
+        copy_ci.save()
+    elif hidden == "category":    
         c = Category(
             owner=request.user, 
             name=request.POST["name"],
@@ -161,23 +164,11 @@ def add(request):
         )
         c.save()
         return HttpResponse(c.id)
-    elif obj == "friend":
+    elif hidden == "friend":
         friend_cl = ChallengeList.objects.get(name=request.POST["name"])
         cl.friends.add(friend_cl)
         return HttpResponse("ok")
 
-    elif "challenge" in request.POST:
-    # Challenge copy
-        c = Challenge.objects.get(id=request.POST["challenge"])
-        new_c = Challenge(
-            challenge_list=cl,
-            description=c.description,
-            category=c.category,
-        )
-        new_c.save()
-        return HttpResponse(new_c.id)
-
-        
     return HttpResponse(0)
 
 def index(request):
@@ -235,8 +226,10 @@ def index(request):
         login_form = LoginForm()
     if not signup_form:
         signup_form = SignupForm()
-    challenges = Challenge.objects.filter(language=get_language()).order_by("-id")[:20]
-    return render_to_response('index.html', {"login_form":login_form, "signup_form":signup_form, "challenges":challenges}, context_instance=RequestContext(request))
+    from django.db import connection
+    challenge_instances = ChallengeInstance.objects.filter(challenge__language=get_language()).order_by("-id")[:20]
+    queries = connection.queries
+    return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
 def logout(request):
     auth.logout(request)

@@ -9,17 +9,19 @@
 <div class="innertube">
 <h3>{% trans "Some examples of challenges:" %}</h3>
 <br />
-{% for c in challenges %}
+{% for ci in challenge_instances %}
 	{% if forloop.first %}
 		<div class="row table_head">
 			<span class="cell description">{% trans "Description" %}</span>
 			<span class="cell category">{% trans "Category" %}</span>
 		</div>
 	{% endif %}
-	<div class="row" id="challenge-row-{{ c.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
-		<span class="cell description"><a href="/{{ c.challenge_list.name }}">{{ c.description }}</a></span>
-		<span class="cell category">{{ c.category.name }}</span>
-	</div>
+	{% with ci.challenge as c %}
+		<div class="row" id="challenge-row-{{ ci.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
+			<span class="cell description"><a href="/{{ ci.challenge_list.name }}">{{ c.description }}</a></span>
+			<span class="cell category">{{ c.category.name }}</span>
+		</div>
+	{% endwith %}
 {% endfor %}
 <br />
 </div>
@@ -129,4 +131,9 @@
 		});
 	});
 </script>
+{% comment %}
+{% for q in queries %}
+	{{ q }}<br />
+{% endfor %}
+{% endcomment %}
 {% endblock content %}
