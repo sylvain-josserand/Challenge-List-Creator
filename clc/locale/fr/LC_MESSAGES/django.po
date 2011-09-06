@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-27 19:54+0200\n"
+"POT-Creation-Date: 2011-09-01 23:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: models.py:29
+#: models.py:27
 msgid "description"
 msgstr "Description"
 
-#: models.py:30
+#: models.py:28
 msgid "category"
 msgstr "Catégorie"
 
@@ -35,7 +35,7 @@ msgstr "Nom d'utilisateur"
 msgid "Enter the username you wish to use"
 msgstr "Entrez le nom d'utilisateur souhaité"
 
-#: views.py:17 templates/index.html:87
+#: views.py:17 templates/index.html:89
 msgid "Email"
 msgstr "Adresse email"
 
@@ -71,15 +71,7 @@ msgstr "Entrez votre nom d'utilisateur"
 msgid "Enter your password"
 msgstr "Entrez votre mot de passe"
 
-#: views.py:34 templates/display.html:75 templates/display.html.py:95
-msgid "Name"
-msgstr "Nom"
-
-#: views.py:34
-msgid "Enter the category name"
-msgstr "Entrez le nom de la catégorie"
-
-#: views.py:42
+#: views.py:38
 msgid ""
 "Sorry but this challenge list does not exist. Want to create it?<a "
 "href='/'>Click here.</a>"
@@ -87,16 +79,16 @@ msgstr ""
 "Désolé mais cette liste de défis n'existe pas. Voulez-vous la créer?<a "
 "href='/'>Cliquez ici</a>"
 
-#: views.py:67
+#: views.py:62
 msgid "Your challenge list"
 msgstr "Votre liste de défis"
 
-#: views.py:69
+#: views.py:64
 #, python-format
 msgid "%(name)s's challenge list"
 msgstr "La liste des défis de %(name)s"
 
-#: views.py:201
+#: views.py:192
 msgid "passwords mismatch"
 msgstr "Les mots de passe ne correspondent pas"
 
@@ -108,7 +100,7 @@ msgstr "Créer une liste de défis"
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: templates/display.html:5 templates/display.html.py:138
+#: templates/display.html:5 templates/display.html.py:91
 msgid "Back to my list"
 msgstr "Retour à ma liste"
 
@@ -116,20 +108,19 @@ msgstr "Retour à ma liste"
 msgid "Add to my friends"
 msgstr "Ajouter à mes amis"
 
-#: templates/display.html:16 templates/index.html:15
+#: templates/display.html:15 templates/index.html:15
 msgid "Description"
 msgstr "Description"
 
-#: templates/display.html:17 templates/index.html:16
+#: templates/display.html:16 templates/index.html:16
 msgid "Category"
 msgstr "Catégorie"
 
-#: templates/display.html:18
+#: templates/display.html:17
 msgid "Progress"
 msgstr "Progrès"
 
-#: templates/display.html:33 templates/display.html.py:82
-#: templates/display.html:102
+#: templates/display.html:33 templates/display.html.py:83
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -141,51 +132,39 @@ msgstr "Accepter ce challenge"
 msgid "Add this to YOUR list"
 msgstr "Ajouter à VOTRE liste"
 
-#: templates/display.html:39
+#: templates/display.html:40
 msgid "No challenge yet. You can now create a challenge. Just dodo it!"
 msgstr ""
 "Vous n'avez pas encore de challenge. Vous pouvez maintenant en ajouter. Just "
 "dodo it!"
 
-#: templates/display.html:43
+#: templates/display.html:44
 msgid "en_US"
 msgstr "fr_FR"
 
-#: templates/display.html:47
+#: templates/display.html:48
 msgid "Add a new challenge"
 msgstr "Ajouter un nouveau challenge"
 
-#: templates/display.html:60 templates/display.html.py:130
+#: templates/display.html:61
 msgid "Add"
 msgstr "Ajouter"
 
-#: templates/display.html:70
+#: templates/display.html:71
 msgid "Your friends"
 msgstr "Vos amis"
 
-#: templates/display.html:76 templates/display.html.py:96
+#: templates/display.html:76
+msgid "Name"
+msgstr "Nom"
+
+#: templates/display.html:77
 msgid "Action"
 msgstr "Action"
 
-#: templates/display.html:90
-msgid "Your categories"
-msgstr "Vos catégories"
-
-#: templates/display.html:110
-msgid "Add a new category"
-msgstr "Ajouter une nouvelle catégorie"
-
-#: templates/display.html:120
-msgid "Color"
-msgstr "Couleur"
-
 #: templates/index.html:4
-msgid ""
-"Challenge List Creator allows you to create your own bucket list and share "
-"it with your friends."
-msgstr ""
-"Challenge List Creator vous permet de créer votre liste de défis et de la "
-"partager avec vos amis."
+msgid "Create your own bucket list and share it with your friends."
+msgstr "Créez votre liste de défis et partagez-la avec vos amis."
 
 #: templates/index.html:5
 msgid "This site is a work in progress."
@@ -203,41 +182,53 @@ msgstr "Merci!"
 msgid "Some examples of challenges:"
 msgstr "Quelques exemples de défis:"
 
-#: templates/index.html:32
+#: templates/index.html:34
 msgid "Create an account"
 msgstr "Ouvrir un compte"
 
-#: templates/index.html:40 templates/index.html.py:65
+#: templates/index.html:42 templates/index.html.py:67
 msgid "Hey!"
 msgstr "Hé!"
 
-#: templates/index.html:51
+#: templates/index.html:53
 msgid "Sign me up"
 msgstr "S'inscrire"
 
-#: templates/index.html:57
+#: templates/index.html:59
 msgid "Log in"
 msgstr "Se connecter"
 
-#: templates/index.html:77
+#: templates/index.html:79
 msgid "Log me in"
 msgstr "Se connecter"
 
-#: templates/index.html:83
+#: templates/index.html:85
 msgid "Email field is required if you want an answer."
 msgstr "Entrez votre email si vous voulez une réponse."
 
-#: templates/index.html:89
+#: templates/index.html:91
 msgid "Message"
 msgstr "Message"
 
-#: templates/index.html:112
+#: templates/index.html:114
 msgid "Send a message"
 msgstr "Envoyer"
 
-#: templates/index.html:121
+#: templates/index.html:123
 msgid "Cancel"
 msgstr "Annuler"
+
+#~ msgid "Enter the category name"
+#~ msgstr "Entrez le nom de la catégorie"
+
+#~ msgid "Your categories"
+#~ msgstr "Vos catégories"
+
+#~ msgid "Add a new category"
+#~ msgstr "Ajouter une nouvelle catégorie"
+
+#~ msgid "Color"
+#~ msgstr "Couleur"
 
 #~ msgid ""
 #~ "For questions, suggestions or issues to fix, please contact <a href="
