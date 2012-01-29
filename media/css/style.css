@@ -87,7 +87,7 @@ div#friends .row .action{ width:260px; }
   border:1px solid #999999;
   padding:2px 2px;
   color:#666666;
-  float:left;
+  width:157px; /* Fix firefox/chrome diff behavior */
 }
 .horizontal_form .item .description {
    clear:both;
