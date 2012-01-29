@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-<p style="font-size:16pt">{% trans "Create your own bucket list and share it with your friends." %}</p><br /><br />
-<p>{% trans "This site is a work in progress." %} <a href="" id="ideabox">{% trans "Do you have an idea to improve it ?" %}</a> {% trans "Thanks!"%}</p><br />
+<br />
 <div class="main_container">
 <div class="content_wrapper">
 <div class="content_column">
 <div class="innertube">
+<h1>{% trans "Welcome to your own bucket list maker." %}</h1><br/>
+<h2>{% trans "Create a bucket list and share it with your friends... or not!" %}</h2><br/>
 <h3>{% trans "Some examples of challenges:" %}</h3>
 <br />
 {% for ci in challenge_instances %}
