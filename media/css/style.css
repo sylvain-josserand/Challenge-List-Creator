@@ -57,6 +57,8 @@ div .row {border-bottom: white 1px solid;}
 div .row .cell {padding: 6px;}
 div .row .description{ width:340px; }
 div .row .category{ width:160px; }
+div .row .progress{ width:160px; }
+div .row .due_date{ width:160px; }
 div .row .progress-bar-cell{ width:160px; height:14px; }
 div .row .progress-slider-cell{ width:160px; padding:7px 0 0 0;}
 div .row .delete{ width:30px; }

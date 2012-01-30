@@ -13,8 +13,8 @@ import smtplib
 from email.mime.text import MIMEText
 
 class SignupForm(forms.Form):
-    username = forms.CharField(label=_("User name"), widget=forms.TextInput, help_text=_("Enter the username you wish to use"))
-    email = forms.EmailField(label=_("Email"), help_text=_("Enter your email address"))
+    username = forms.CharField(label=_("User name"), widget=forms.TextInput, help_text=_("Enter the username you wish to use (This is public)"))
+    email = forms.EmailField(label=_("Email"), help_text=_("Enter your email address (We keep it private)"))
     password = forms.CharField(label=_("Password"), widget=forms.PasswordInput, help_text=_("Enter your super-secret password"))
     password2 = forms.CharField(label=_("Password confirmation"), widget=forms.PasswordInput, help_text=_("Enter the same password again"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="signup")
@@ -28,6 +28,7 @@ class ChallengeForm(forms.ModelForm):
     class Meta:
         model = Challenge
         fields = ('description','category')
+    due_date = forms.DateField()
     hidden = forms.CharField(widget=forms.HiddenInput, initial="challenge")
 
 def display(request, list_name):
@@ -94,6 +95,8 @@ def save(request):
         ci = ChallengeInstance.objects.get(id=request.POST["challenge_instance"])
         if "progress" in request.POST:
             ci.progress = int(request.POST["progress"])
+        if "due_date" in request.POST:
+            ci.due_date = datetime.date(request.POST["due_date"])
         ci.save()
         return HttpResponse(request.POST["challenge_instance"])
 
@@ -142,8 +145,9 @@ def add(request):
             )
             c.save()
         ci = ChallengeInstance(
-            challenge = c,
-            challenge_list = cl,
+            challenge=c,
+            challenge_list=cl,
+            due_date=request.POST["due_date"],
         )
         ci.save()
         return HttpResponse(ci.id)

@@ -15,6 +15,7 @@
 			<span class="cell description">{% trans "Description" %}</span>
 			<span class="cell category">{% trans "Category" %}</span>
 			<span class="cell progress">{% trans "Progress" %}</span>
+			<span class="cell due_date">{% trans "Due date" %}</span>
 		</div>
 	{% endif %}
 	{% with ci.challenge as c %}
@@ -29,6 +30,7 @@
 				<div id="progress-{{ ci.id }}" class="progress-bar" value="{{ ci.progress }}"></div>
 			{% endif %}
 			</span>
+			<span class="cell due_date">{{ ci.due_date|default_if_none:"" }}</span>
 			<span class="cell action">
 				{% if mine %}<button class="delete-challenge-button" id="delete-{{ ci.id }}">{% trans "Delete" %}</button>
 				{% else %}{% if logged_in %}<button class="grab-button" id="grab-{{ ci.id }}">{% trans "Accept this challenge" %}</button>
@@ -105,6 +107,11 @@ function checkCompleted(t){
 };
 
 $(function(){
+	$("#id_due_date").datepicker({
+		dateFormat: 'yy-mm-dd',
+		showOn: "button",
+		buttonImage: "media/images/calendar.gif",
+	});
     $("#add-challenge").button();
     $("#add-challenge-form").submit(function(){
         $.post(

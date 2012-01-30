@@ -6,7 +6,7 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 DEBUG = True
 #DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-DJANGO_MEDIA = False 
+# DJANGO_MEDIA = True <--- Put this in system env. Example: # DJANGO_MEDIA=True ./manage.py runserver
 
 LOGIN_URL = "/"
 ADMINS = (
