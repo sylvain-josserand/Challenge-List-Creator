@@ -12,6 +12,8 @@ from django.forms.util import ErrorList
 import smtplib
 from email.mime.text import MIMEText
 
+from os import getenv
+
 class SignupForm(forms.Form):
     username = forms.CharField(label=_("User name"), widget=forms.TextInput, help_text=_("Enter the username you wish to use (This is public)"))
     email = forms.EmailField(label=_("Email"), help_text=_("Enter your email address (We keep it private)"))
@@ -103,21 +105,22 @@ def save(request):
 def send(request):
     if request.method != 'POST':
         return HttpResponse(__("You should try a POST request"))
-    email = request.POST.get("email", "Not specified")
-    if email == "":
-        email = "sylvain.josserand@laposte.net"
-    message = request.POST.get("message", "Not specified")
+    email = request.POST.get("email", "Not specified.")
+    if not email:
+        email = 'anonymous'
+    message = request.POST.get("message", "Not specified.")
     if message == "":
         message = "Empty message."
-    smtp = smtplib.SMTP("smtp.laposte.net")
-    smtp.login("sylvain.josserand@laposte.net","geranium")
+    smtp = smtplib.SMTP(getenv('SMTP_SERVER'))
+    smtp.login(getenv('SMTP_USERNAME'), getenv('SMTP_PASSWORD'))
     mime_msg = MIMEText(message.encode("utf-8"), "plain", "utf-8")
-    mime_msg['From'] = email
-    mime_msg['To'] = "joss82@gmail.com"
+    admin_email = getenv('ADMIN_EMAIL')
+    mime_msg['From'] = admin_email
+    mime_msg['To'] = admin_email
     mime_msg['Subject'] = "[CLC] Message from %s" % email
     smtp.sendmail(
-        "sylvain.josserand@laposte.net",
-        "joss82@gmail.com",
+        admin_email,
+        admin_email,
         mime_msg.as_string()
     )
     smtp.quit()
