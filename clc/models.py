@@ -5,7 +5,6 @@ from django.utils.translation import get_language, ugettext_lazy as _
 class ChallengeList(models.Model):
     name = models.CharField(max_length=200, unique=True)
     owner = models.OneToOneField(User, db_index=True, unique=True, related_name="challenge_list")
-    deadline = models.DateTimeField(blank=True, null=True)
     friends = models.ManyToManyField("self", symmetrical=False) 
     def __unicode__(self):
         return self.name
@@ -39,10 +38,12 @@ class ChallengeInstance(models.Model):
     challenge_list = models.ForeignKey(ChallengeList, db_index=True, related_name="challenges")
     challenge = models.ForeignKey(Challenge, db_index=True, related_name="instances")
     progress = models.PositiveSmallIntegerField(default=0)
+    due_date = models.DateField(blank=True, null=True, db_index=True)
     def __unicode__(self):
         return repr((
             self.id,
             self.challenge_list,
             self.challenge,
             self.progress,
+            self.due_date,
         ))
