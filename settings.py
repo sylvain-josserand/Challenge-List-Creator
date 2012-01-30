@@ -10,7 +10,7 @@ TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL = "/"
 ADMINS = (
-    ("Sylvain", "sylvain@intuitivo.fr")
+    ("Admin", os.getenv('ADMIN_EMAIL')
 )
 
 MANAGERS = ADMINS
