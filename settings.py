@@ -10,7 +10,7 @@ TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL = "/"
 ADMINS = (
-    ("Admin", os.getenv('ADMIN_EMAIL')
+    ("Admin", os.getenv('ADMIN_EMAIL'))
 )
 
 MANAGERS = ADMINS
