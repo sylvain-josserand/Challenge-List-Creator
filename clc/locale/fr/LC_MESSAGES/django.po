@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-12 00:45+0100\n"
+"POT-Creation-Date: 2012-01-31 18:34+0700\n"
 "PO-Revision-Date: 2011-12-12 00:32+0100\n"
 "Last-Translator: Sylvain Josserand <joss82@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li?.org>\n"
@@ -18,59 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: models.py:27
+#: models.py:26
 msgid "description"
 msgstr "Description"
 
-#: models.py:28
+#: models.py:27
 msgid "category"
 msgstr "Catégorie"
 
-#: views.py:16
+#: views.py:19
 msgid "User name"
 msgstr "Nom d'utilisateur"
 
-#: views.py:16
-msgid "Enter the username you wish to use"
-msgstr "Entrez le nom d'utilisateur souhaité"
+#: views.py:19
+msgid "Enter the username you wish to use (This is public)"
+msgstr "Entrez le nom d'utilisateur souhaité (Il sera public)"
 
-#: views.py:17 templates/index.html:90
+#: views.py:20 templates/base.html:67
 msgid "Email"
 msgstr "Adresse email"
 
-#: views.py:17
-msgid "Enter your email address"
-msgstr "Entrez votre adresse e-mail"
+#: views.py:20
+msgid "Enter your email address (We keep it private)"
+msgstr "Entrez votre adresse e-mail (Nous le gardons privé)"
 
-#: views.py:18 views.py:24
+#: views.py:21 views.py:27
 msgid "Password"
 msgstr "Mot de passe"
 
-#: views.py:18
+#: views.py:21
 msgid "Enter your super-secret password"
 msgstr "Entrez votre mot de passe top-secret"
 
-#: views.py:19
+#: views.py:22
 msgid "Password confirmation"
 msgstr "Confirmation"
 
-#: views.py:19
+#: views.py:22
 msgid "Enter the same password again"
 msgstr "Entrez à nouveau le même mot de passe"
 
-#: views.py:23
+#: views.py:26
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: views.py:23
+#: views.py:26
 msgid "Enter your username"
 msgstr "Entrez votre nom d'utilisateur"
 
-#: views.py:24
+#: views.py:27
 msgid "Enter your password"
 msgstr "Entrez votre mot de passe"
 
-#: views.py:38
+#: views.py:42
 msgid ""
 "Sorry but this challenge list does not exist. Want to create it?<a "
 "href='/'>Click here.</a>"
@@ -78,16 +78,16 @@ msgstr ""
 "Désolé mais cette liste de défis n'existe pas. Voulez-vous la créer?<a "
 "href='/'>Cliquez ici</a>"
 
-#: views.py:62
+#: views.py:66
 msgid "Your challenge list"
 msgstr "Votre liste de défis"
 
-#: views.py:64
+#: views.py:68
 #, python-format
 msgid "%(name)s's challenge list"
 msgstr "La liste des défis de %(name)s"
 
-#: views.py:192
+#: views.py:200
 msgid "passwords mismatch"
 msgstr "Les mots de passe ne correspondent pas"
 
@@ -103,7 +103,23 @@ msgstr "Déconnexion"
 msgid "Idea box"
 msgstr "Boîte à idées"
 
-#: templates/display.html:5 templates/display.html.py:91
+#: templates/base.html:63
+msgid "Email field is required if you want an answer."
+msgstr "Entrez votre email si vous voulez une réponse."
+
+#: templates/base.html:69
+msgid "Message"
+msgstr "Message"
+
+#: templates/base.html:82
+msgid "Send a message"
+msgstr "Envoyer"
+
+#: templates/base.html:92
+msgid "Cancel"
+msgstr "Annuler"
+
+#: templates/display.html:5 templates/display.html.py:96
 msgid "Back to my list"
 msgstr "Retour à ma liste"
 
@@ -123,47 +139,53 @@ msgstr "Catégorie"
 msgid "Progress"
 msgstr "Progrès"
 
-#: templates/display.html:33 templates/display.html.py:83
+#: templates/display.html:18
+msgid "Due date"
+msgstr "Échéance"
+
+#: templates/display.html:38 templates/display.html.py:88
 msgid "Delete"
 msgstr "Supprimer"
 
-#: templates/display.html:34
+#: templates/display.html:39
 msgid "Accept this challenge"
 msgstr "Accepter ce challenge"
 
-#: templates/display.html:35
+#: templates/display.html:40
 msgid "Add this to YOUR list"
 msgstr "Ajouter à VOTRE liste"
 
-#: templates/display.html:40
+#: templates/display.html:45
 msgid ""
 "You can now create your first challenge. Enter a description in the box "
 "using your own words, then select a category and click on Add a new "
 "challenge."
 msgstr ""
-"Vous pouvez maintenant vous donner votre premier défi à relever. Entrez une description en utilisant vos propres mots, puis choisissez une catégorie et validez en cliquant sur Ajouter un nouveau challenge"
+"Vous pouvez maintenant vous donner votre premier défi à relever. Entrez une "
+"description en utilisant vos propres mots, puis choisissez une catégorie et "
+"validez en cliquant sur Ajouter un nouveau challenge"
 
-#: templates/display.html:44
+#: templates/display.html:49
 msgid "en_US"
 msgstr "fr_FR"
 
-#: templates/display.html:48
+#: templates/display.html:53
 msgid "Add a new challenge"
 msgstr "Ajouter un nouveau challenge"
 
-#: templates/display.html:61
+#: templates/display.html:66
 msgid "Add"
 msgstr "Ajouter"
 
-#: templates/display.html:71
+#: templates/display.html:76
 msgid "Your friends"
 msgstr "Vos amis"
 
-#: templates/display.html:76
+#: templates/display.html:81
 msgid "Name"
 msgstr "Nom"
 
-#: templates/display.html:77
+#: templates/display.html:82
 msgid "Action"
 msgstr "Action"
 
@@ -183,7 +205,7 @@ msgstr "Quelques exemples de défis:"
 msgid "Create an account"
 msgstr "Ouvrir un compte"
 
-#: templates/index.html:43 templates/index.html.py:68
+#: templates/index.html:43 templates/index.html.py:69
 msgid "Hey!"
 msgstr "Hé!"
 
@@ -191,29 +213,13 @@ msgstr "Hé!"
 msgid "Sign me up"
 msgstr "S'inscrire"
 
-#: templates/index.html:60
+#: templates/index.html:61
 msgid "Log in"
 msgstr "Se connecter"
 
-#: templates/index.html:80
+#: templates/index.html:81
 msgid "Log me in"
 msgstr "Se connecter"
-
-#: templates/index.html:86
-msgid "Email field is required if you want an answer."
-msgstr "Entrez votre email si vous voulez une réponse."
-
-#: templates/index.html:92
-msgid "Message"
-msgstr "Message"
-
-#: templates/index.html:115
-msgid "Send a message"
-msgstr "Envoyer"
-
-#: templates/index.html:124
-msgid "Cancel"
-msgstr "Annuler"
 
 #~ msgid "No challenge yet. You can now create a challenge. Just dodo it!"
 #~ msgstr ""
