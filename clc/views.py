@@ -12,6 +12,7 @@ from django.forms.util import ErrorList
 import smtplib
 from email.mime.text import MIMEText
 
+import datetime
 from os import getenv
 
 class SignupForm(forms.Form):
@@ -98,7 +99,7 @@ def save(request):
         if "progress" in request.POST:
             ci.progress = int(request.POST["progress"])
         if "due_date" in request.POST:
-            ci.due_date = datetime.date(request.POST["due_date"])
+            ci.due_date = datetime.date(*map(int, request.POST["due_date"].split("-")))
         ci.save()
         return HttpResponse(request.POST["challenge_instance"])
 
