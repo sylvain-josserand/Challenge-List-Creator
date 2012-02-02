@@ -12,7 +12,7 @@ from datetime import date
 from clc.models import ChallengeInstance
 from os import getenv
 
-admin_email = "Challenge LC<%s>" % getenv('ADMIN_EMAIL')
+admin_email = getenv('ADMIN_EMAIL')
 
 emails = set()
 
