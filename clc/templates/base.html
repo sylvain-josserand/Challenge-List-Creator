@@ -58,8 +58,8 @@
 <br /><br />
 <br /><br />
 <br /><br />
-<center><a href="" id="ideabox">{% trans "Idea box" %}</a> - <a href="http://www.intuitivo.fr">Web developer</a></center></p>
-<div id="dialog-form" title="Send a message">
+<center><a href="" id="ideabox">{% trans "Idea box and problem report" %}</a> - <a href="http://www.intuitivo.fr">Web developer</a></center></p>
+<div id="dialog-form" title="{% trans "Send a message" %}">
 	<p class="validateTips">{% trans "Email field is required if you want an answer." %}</p>
 
 	<form>
@@ -72,6 +72,7 @@
 	</form>
 </div>
 <script type="text/javascript">
+$(function(){ 
 	$( "#dialog-form" ).dialog({
 		autoOpen: false,
 		height: 380,
@@ -100,6 +101,12 @@
 		$( "#dialog-form" ).dialog( "open" );
 		return false;
 	});
+    $(".logout-button").button({
+        icons: {
+            primary: "ui-icon-power",
+        }
+    });
+  });
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-3636359-3']);
   _gaq.push(['_trackPageview']);
