@@ -207,9 +207,16 @@ def index(request):
                 except IntegrityError:
                     user = auth.authenticate(username=username, password=password)
                     if not user:
-                        return HttpResponse(__("A user with the same name already exists. But the password you entered is invalid."))
-                user = auth.authenticate(username=username, password=password)
-                valid_form = True
+                        signup_form._errors['username'] = ErrorList((_("A user with the same name already exists. But the password you entered did not match."),))
+                        valid_form = False
+                else:
+                    user = auth.authenticate(username=username, password=password)
+                if valid_form:
+                    try:
+                        cl = user.challenge_list
+                    except ChallengeList.DoesNotExist:
+                        cl = ChallengeList(owner=user, name=user.username)
+                        cl.save()
         if valid_form:
             if user is not None:
                 if user.is_active:
@@ -217,26 +224,17 @@ def index(request):
                     if "next" in request.GET:
                         return HttpResponseRedirect(request.GET["next"])
                     else:
-                        return HttpResponseRedirect("/")
+                        return HttpResponseRedirect(user.username)
                 else:
-                    return HttpResponse(__("Disabled account."))
+                    login_form._errors['username'] = ErrorList((_("Disabled account."),))
             else:
-                return HttpResponse(__("Invalid login."))
+                 login_form._errors['password'] = ErrorList((_("Invalid username and/or password."),))
             
-    elif request.user.is_authenticated():
-        try:
-            cl = request.user.challenge_list
-        except ChallengeList.DoesNotExist:
-            cl = ChallengeList(owner=request.user, name=request.user.username)
-            cl.save()
-        return HttpResponseRedirect(cl.name)
     if not login_form:
         login_form = LoginForm()
     if not signup_form:
         signup_form = SignupForm()
-    from django.db import connection
     challenge_instances = ChallengeInstance.objects.filter(challenge__language=get_language()).order_by("-id")[:20]
-    queries = connection.queries
     return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
 def logout(request):
