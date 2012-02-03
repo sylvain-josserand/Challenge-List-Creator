@@ -51,7 +51,7 @@ The webmaster at challenge list creator.<br/>
 
 smtp = smtplib.SMTP(getenv('SMTP_SERVER'))
 smtp.login(getenv('SMTP_USERNAME'), getenv('SMTP_PASSWORD'))
-for ci in ChallengeInstance.objects.filter(due_date=date.today()):
+for ci in ChallengeInstance.objects.filter(due_date=date.today()).filter(progress__lt=100):
     email = ci.challenge_list.owner.email
     if email in emails:
         continue

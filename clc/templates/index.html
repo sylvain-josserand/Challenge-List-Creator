@@ -66,7 +66,7 @@
         {% if field.errors %}
          <div class="ui-widget" style="float:left;padding: .3em">
           <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
-           <p><span class="ui-icon ui-icon-arrowthick-1-w" style="float: left; margin-right: .3em;"></span><strong>{% trans "Hey!" %}</strong> {{ field.errors|join:", " }}</p>
+           <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><strong>{% trans "Hey!" %}</strong> {{ field.errors|join:", " }}</p>
           </div>
          </div>
         {% endif %}
