@@ -12,6 +12,7 @@ from django.forms.util import ErrorList
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.header import Header
 
 import datetime
 from os import getenv
@@ -91,24 +92,17 @@ def reset_password(request, list_name):
         signup_form = SignupForm({'username':user.username, 'email':user.email, 'hidden':'signup'})
         signup_form._errors = {}
     elif request.method == 'POST':
-        from sys import stderr
-        stderr.write("POST OK\n")
         signup_form = SignupForm(request.POST)
-        stderr.write("signup_form\n")
         if signup_form.is_valid():
             password = request.POST['password']
             password2 = request.POST['password2']
             if password == password2:
-                stderr.write("passwords match\n")
                 user.set_password(password)
                 user.save()
                 user = auth.authenticate(username=user.username, password=password)
                 if user is not None:
-                    stderr.write("user is not None\n")
                     if user.is_active:
-                        stderr.write("user is active\n")
                         auth.login(request, user)
-                        stderr.write("HttpResponseRedirect(user.username)\n")
                         return HttpResponseRedirect('/'+user.username)
                     else:
                         return message_render(request, _("Sorry, but this account is disabled."))
@@ -116,10 +110,6 @@ def reset_password(request, list_name):
                     return message_render(request, _("Sorry, but this account is invalid."))
             else:
                 signup_form._errors['password'] = signup_form._errors['password2'] = ErrorList((_('passwords mismatch'),)) 
-        else:
-            stderr.write("Invalid signup_form\n")
-            stderr.write(str(signup_form._errors))
-            stderr.write('\n')
     return render_to_response('reset_password.html', locals(), context_instance=RequestContext(request))
 
 
@@ -128,7 +118,7 @@ def send_password(request):
         return HttpResponse(__("You should try a POST request"))
     if "email" in request.POST:
         email = request.POST["email"]
-        text_template = _("""\
+        text_template = __("""\
 Hi %(username)s,
 
 You couldn't remember your password. That's ok.
@@ -141,7 +131,7 @@ Have fun,
 The webmaster at challenge list creator.
 """)
 
-        html_template = _("""\
+        html_template = __("""\
 <html><body>
 <a href=http://www.challengelistcreator.com style="border:0;" ><img src="http://www.challengelistcreator.com/media/images/logo.png" /></a><br/>
 <br/>
@@ -161,8 +151,8 @@ The webmaster at challenge list creator.<br/>
         admin_email = getenv('ADMIN_EMAIL')
         try:
             user = auth.models.User.objects.get(email=email)
-        except auth.models.User.DoesNotExist:
-            return HttpResponse(False)
+        except auth.models.User.DoesNotExist, e:
+            return HttpResponse(str(e))
         d = {'username':user.username, 'authkey':user.password.split('$')[-1]}
         text = text_template % d
         html = html_template % d
@@ -173,25 +163,28 @@ The webmaster at challenge list creator.<br/>
         msg.attach(part2)
         msg['From'] = admin_email
         msg['To'] = email
-        msg['Subject'] = _("You have asked to reset your password")
+        msg['Subject'] = Header(__("You have asked to reset your password"), 'utf-8')
         smtp = smtplib.SMTP(getenv('SMTP_SERVER'))
+        smtp.login(getenv('SMTP_USERNAME'), getenv('SMTP_PASSWORD'))
         try:
-            smtp.login(getenv('SMTP_USERNAME'), getenv('SMTP_PASSWORD'))
             smtp.sendmail(
-                admin_email,
-                email,
+                msg['From'],
+                msg['To'],
                 msg.as_string()
             )
-        except:
-            return HttpResponse(False)
+        except e:
+            return HttpResponse(str(e))
         else:
             return HttpResponse(True)
 
         finally:
             if smtp:
+                f = open("/tmp/msg", "w")
+                f.write(msg.as_string())
+                f.close()
                 smtp.quit()
     else:
-        return HttpResponse(False)
+        return HttpResponse("email missing in POST arguments")
 
 @login_required
 def delete(request):
@@ -235,13 +228,13 @@ def send(request):
     message = request.POST.get("message", "Not specified.")
     if message == "":
         message = "Empty message."
-    smtp = smtplib.SMTP(getenv('SMTP_SERVER'))
-    smtp.login(getenv('SMTP_USERNAME'), getenv('SMTP_PASSWORD'))
     mime_msg = MIMEText(message.encode("utf-8"), "plain", "utf-8")
     admin_email = getenv('ADMIN_EMAIL')
     mime_msg['From'] = admin_email
     mime_msg['To'] = admin_email
     mime_msg['Subject'] = "[CLC] Message from %s" % email
+    smtp = smtplib.SMTP(getenv('SMTP_SERVER'))
+    smtp.login(getenv('SMTP_USERNAME'), getenv('SMTP_PASSWORD'))
     smtp.sendmail(
         admin_email,
         admin_email,
