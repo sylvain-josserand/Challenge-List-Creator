@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-03 21:16+0700\n"
+"POT-Creation-Date: 2012-02-06 21:21+0700\n"
 "PO-Revision-Date: 2011-12-12 00:32+0100\n"
 "Last-Translator: Sylvain Josserand <joss82@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li?.org>\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
+
 #: models.py:26
 msgid "description"
 msgstr "description"
@@ -26,51 +27,59 @@ msgstr "description"
 msgid "category"
 msgstr "catégorie"
 
-#: views.py:20
+#: settings.py:97
+msgid "French"
+msgstr "Français"
+
+#: settings.py:98
+msgid "English"
+msgstr "Anglais"
+
+#: views.py:21
 msgid "User name"
 msgstr "Nom d'utilisateur"
 
-#: views.py:20
+#: views.py:21
 msgid "Enter the username you wish to use (This is public)"
 msgstr "Entrez le nom d'utilisateur souhaité (Il sera public)"
 
-#: views.py:21 templates/base.html:67 templates/index.html:88
+#: views.py:22 templates/base.html:67 templates/index.html:88
 msgid "Email"
 msgstr "Adresse email"
 
-#: views.py:21
+#: views.py:22
 msgid "Enter your email address (We keep it private)"
 msgstr "Entrez votre adresse e-mail (Nous le gardons privé)"
 
-#: views.py:22 views.py:28
+#: views.py:23 views.py:29
 msgid "Password"
 msgstr "Mot de passe"
 
-#: views.py:22
+#: views.py:23
 msgid "Enter your super-secret password"
 msgstr "Entrez votre mot de passe top-secret"
 
-#: views.py:23
+#: views.py:24
 msgid "Password confirmation"
 msgstr "Confirmation"
 
-#: views.py:23
+#: views.py:24
 msgid "Enter the same password again"
 msgstr "Entrez à nouveau le même mot de passe"
 
-#: views.py:27
+#: views.py:28
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: views.py:27
+#: views.py:28
 msgid "Enter your username"
 msgstr "Entrez votre nom d'utilisateur"
 
-#: views.py:28
+#: views.py:29
 msgid "Enter your password"
 msgstr "Entrez votre mot de passe"
 
-#: views.py:48
+#: views.py:49
 msgid ""
 "Sorry but this challenge list does not exist. Want to create it?<a "
 "href='/'>Click here.</a>"
@@ -78,110 +87,40 @@ msgstr ""
 "Désolé mais cette liste de défis n'existe pas. Voulez-vous la créer?<a "
 "href='/'>Cliquez ici</a>"
 
-#: views.py:70
+#: views.py:71
 msgid "Your challenge list"
 msgstr "Votre liste de défis"
 
-#: views.py:72
+#: views.py:73
 #, python-format
 msgid "%(name)s's challenge list"
 msgstr "La liste des défis de %(name)s"
 
-#: views.py:84
+#: views.py:85
 msgid "Sorry, but this user does not exist."
 msgstr "Désolé, mais cet utilisateur n'existe pas."
 
-#: views.py:87
+#: views.py:88
 msgid "Sorry, but the authentication key is missing."
 msgstr "Désolé, mais il manque la clef d'authentification."
 
-#: views.py:89
+#: views.py:90
 msgid "Sorry, but the authentication key is wrong."
 msgstr "Désolé, mais la clef d'authentification est incorrecte."
 
-#: views.py:114
+#: views.py:108
 msgid "Sorry, but this account is disabled."
 msgstr "Désolé, mais ce compte est désactivé."
 
-#: views.py:116
+#: views.py:110
 msgid "Sorry, but this account is invalid."
 msgstr "Désolé, mais ce compte est invalide."
 
-#: views.py:118 views.py:324
+#: views.py:112 views.py:317
 msgid "passwords mismatch"
 msgstr "Les mots de passe ne correspondent pas"
 
-#: views.py:131
-#, python-format
-msgid ""
-"Hi %(username)s,\n"
-"\n"
-"You couldn't remember your password. That's ok.\n"
-"\n"
-"Please click the link below to set a new one:\n"
-"http://www.challengelistcreator.com/reset_password/%(username)s?authkey="
-"%(authkey)s\n"
-"\n"
-"Have fun,\n"
-"\n"
-"The webmaster at challenge list creator.\n"
-msgstr ""
-"Bonjour %(username)s,\n"
-"\n"
-"Vous avez oublié votre mot de passe? Ce n'est pas grave.\n"
-"\n"
-"Merci de cliquer sur le lien ci-dessous pour en avoir un tout neuf:\n"
-"http://www.challengelistcreator.com/reset_password/%(username)s?authkey="
-"%(authkey)s\n"
-"\n"
-"Amusez-vous bien,\n"
-"\n"
-"Le webmaster de challenge list creator.\n"
-
-#: views.py:144
-#, python-format
-msgid ""
-"<html><body>\n"
-"<a href=http://www.challengelistcreator.com style=\"border:0;\" ><img src="
-"\"http://www.challengelistcreator.com/media/images/logo.png\" /></a><br/>\n"
-"<br/>\n"
-"Hi %(username)s,<br/>\n"
-"<br/>\n"
-"You couldn't remember your password. That's ok.<br/>\n"
-"<br/>\n"
-"<b>Please click the link below to set a new one:</b><br/>\n"
-"<a href='http://www.challengelistcreator.com/reset_password/%(username)s?"
-"authkey=%(authkey)s'>Reset your password</a><br/>\n"
-"<br/>\n"
-"Have fun,<br/>\n"
-"<br/>\n"
-"The webmaster at challenge list creator.<br/>\n"
-"<br/>\n"
-"</body></html>\n"
-msgstr ""
-"<html><body>\n"
-"<a href=http://www.challengelistcreator.com style=\"border:0;\" ><img src="
-"\"http://www.challengelistcreator.com/media/images/logo.png\" /></a><br/>\n"
-"<br/>\n"
-"Bonjour %(username)s,<br/>\n"
-"<br/>\n"
-"Vous avez oublié votre mot de passe? Ce n'est pas grave.<br/>\n"
-"<br/>\n"
-"<b>Merci de cliquer sur le lien ci-dessous pour en avoir un tout neuf:</b><br/>\n"
-"<a href='http://www.challengelistcreator.com/reset_password/%(username)s?"
-"authkey=%(authkey)s'>Redéfinir votre mot de passe</a><br/>\n"
-"<br/>\n"
-"Amusez-vous bien,<br/>\n"
-"<br/>\n"
-"Le webmaster de challenge list creator.<br/>\n"
-"<br/>\n"
-"</body></html>\n"
-
-#: views.py:176
-msgid "You have asked to reset your password"
-msgstr "Vous avez demandé un nouveau mot de passe"
-
-#: views.py:335
+#: views.py:328
 msgid ""
 "A user with the same name already exists. But the password you entered did "
 "not match."
@@ -189,15 +128,15 @@ msgstr ""
 "Un utilisateur avec le même nom existe déjà. Mais le mot de passe que vous "
 "avez entré ne correspond pas."
 
-#: views.py:340
+#: views.py:333
 msgid "Email already exists."
 msgstr "L'adresse email existe déjà."
 
-#: views.py:357
+#: views.py:350
 msgid "Disabled account."
 msgstr "Compte désactivé."
 
-#: views.py:359
+#: views.py:352
 msgid "Invalid username and/or password."
 msgstr "Nom d'utilisateur ou mot de passe invalide."
 
@@ -340,7 +279,8 @@ msgid ""
 "Please enter your email address so we can send you instructions to reset "
 "your password."
 msgstr ""
-"Veuillez entrer votre adresse email pour que nous puissions vous envoyer votre nouveau mot de passe."
+"Veuillez entrer votre adresse email pour que nous puissions vous envoyer "
+"votre nouveau mot de passe."
 
 #: templates/index.html:115
 msgid "Send me an email"
@@ -348,7 +288,36 @@ msgstr "Envoyez-moi un email"
 
 #: templates/reset_password.html:8
 msgid "Enter your new password twice"
-msgstr "Entrez votre nouveau mot de passe à deux reprises dans les champs vides"
+msgstr ""
+"Entrez votre nouveau mot de passe à deux reprises dans les champs vides"
+
+#~ msgid ""
+#~ "Hi %(username)s,\n"
+#~ "\n"
+#~ "You couldn't remember your password. That's ok.\n"
+#~ "\n"
+#~ "Please click the link below to set a new one:\n"
+#~ "http://www.challengelistcreator.com/reset_password/%(username)s?authkey="
+#~ "%(authkey)s\n"
+#~ "\n"
+#~ "Have fun,\n"
+#~ "\n"
+#~ "The webmaster at challenge list creator.\n"
+#~ msgstr ""
+#~ "Bonjour %(username)s,\n"
+#~ "\n"
+#~ "Vous avez oublié votre mot de passe? Ce n'est pas grave.\n"
+#~ "\n"
+#~ "Merci de cliquer sur le lien ci-dessous pour en avoir un tout neuf:\n"
+#~ "http://www.challengelistcreator.com/reset_password/%(username)s?authkey="
+#~ "%(authkey)s\n"
+#~ "\n"
+#~ "Amusez-vous bien,\n"
+#~ "\n"
+#~ "Le webmaster de challenge list creator.\n"
+
+#~ msgid "You have asked to reset your password"
+#~ msgstr "Vous avez demandé un nouveau mot de passe"
 
 #~ msgid "Idea box"
 #~ msgstr "Boîte à idées"
