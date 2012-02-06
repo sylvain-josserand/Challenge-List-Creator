@@ -32,7 +32,7 @@
 				</span>
 			{% endif %}
 			<span class="cell due_date">
-			<input type=text id="duedate-{{ ci.id }}" {% if mine %}class="date"{% endif %} style="background-color:rgb({{c.category.red}}    ,{{c.category.green}},{{c.category.blue}});border:0;" value="{{ ci.due_date|default_if_none:""|date:"Y-m-d" }}" />
+			<input type=text id="duedate-{{ ci.id }}" {% if mine %}class="date"{% endif %} style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});background:url('/media/images/icon_calendar.gif') no-repeat right center;border:0;" value="{{ ci.due_date|default_if_none:""|date:"Y-m-d" }}" />
 			</span>
 			<span class="cell action">
 				{% if mine %}<button class="delete-challenge-button" id="delete-{{ ci.id }}">{% trans "Delete" %}</button>
