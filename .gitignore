@@ -2,5 +2,5 @@
 .dump
 8000.log
 database.bkp
-launch_devserver.sh
+runserver_private.sh
 
