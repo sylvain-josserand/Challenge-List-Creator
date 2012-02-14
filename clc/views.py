@@ -33,7 +33,7 @@ class ChallengeForm(forms.ModelForm):
     class Meta:
         model = Challenge
         fields = ('description','category')
-    due_date = forms.DateField()
+    due_date = forms.DateField(required=False, label=_("Due date (optional)"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="challenge")
 
 def message_render(request, message):
@@ -264,11 +264,17 @@ def add(request):
                 language=get_language(),
             )
             c.save()
-        ci = ChallengeInstance(
-            challenge=c,
-            challenge_list=cl,
-            due_date=request.POST["due_date"],
-        )
+        if request.POST.get("due_date", None):
+            ci = ChallengeInstance(
+                challenge=c,
+                challenge_list=cl,
+                due_date=request.POST["due_date"],
+            )
+        else:
+            ci = ChallengeInstance(
+                challenge=c,
+                challenge_list=cl,
+            )
         ci.save()
         return HttpResponse(ci.id)
     elif hidden == "challenge_instance":
