@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-14 14:42+0700\n"
+"POT-Creation-Date: 2012-02-15 19:42+0100\n"
 "PO-Revision-Date: 2011-12-12 00:32+0100\n"
 "Last-Translator: Sylvain Josserand <joss82@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li?.org>\n"
@@ -234,8 +234,8 @@ msgid "Action"
 msgstr "Action"
 
 #: templates/index.html:9
-msgid "Welcome to your own bucket list maker."
-msgstr "Bienvenue sur votre créateur de défis."
+msgid "Welcome to your online bucket list maker."
+msgstr "Bienvenue sur votre créateur de défis en ligne."
 
 #: templates/index.html:10
 msgid "Create a bucket list and share it with your friends... or not!"
