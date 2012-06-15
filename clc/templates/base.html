@@ -47,9 +47,11 @@
 <body>
 <a href="/" style="text-decoration:none;"><img src="/media/images/logo.png" style="border:0px;" alt="bucket list creator"/></a>
 <div id="logout">
-{% if logged_in %}
-<a class="logout-button" href="/logout">{% trans "Log out" %}</a>
-{% endif %}
+	{% if logged_in %}
+	<a class="logout-button" href="/logout?next={{ request.path }}">{% trans "Log out" %}</a>
+	{% else %}
+	<a class="login-button" href="">{% trans "Log in" %}</a>
+	{% endif %}
 </div>
 <div id="content">
 {% block content %}{% endblock content %}
@@ -59,7 +61,36 @@
 <br /><br />
 <br /><br />
 <center><a href="" id="ideabox">{% trans "Idea box and problem report" %}</a> - <a href="http://www.intuitivo.fr">Web developer</a></center></p>
-<div id="dialog-form" title="{% trans "Send a message" %}">
+<div id="login-form" title="{% trans "Send a message" %}">
+	<p class="validateTips">{% trans "Enter your email and password to log in and edit your list." %}</p>
+
+    <form action="/?next={{ request.path }}" method="post">{% csrf_token %}
+     <div class="horizontal_form">
+      <div class="header">{% trans "Log in" %}</div>
+      {% for field in login_form.visible_fields %}
+       <div class="item">
+        <div class="label">{{ field.label_tag }}</div>
+        <div class="data">{{ field }}</div>
+        {% if field.errors %}
+         <div class="ui-widget" style="float:left;padding: .3em">
+          <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
+           <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>{{ field.errors|join:", " }}</p>
+          </div>
+         </div>
+        {% endif %}
+        <div class="description">{{ field.help_text }}</div>
+       </div>
+      {% endfor %}
+     </div>
+     {% for hidden in login_form.hidden_fields %}
+      {{ hidden }}
+     {% endfor %}
+     <center><a href="" id="send-password">{% trans "Forgot your password?" %}</a></center>
+     <br />
+     <input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
+    </form>
+</div>
+<div id="dialog-form" title="{% trans "Log in" %}">
 	<p class="validateTips">{% trans "Email field is required if you want an answer." %}</p>
 
 	<form>
@@ -106,6 +137,29 @@ $(function(){
             primary: "ui-icon-power",
         }
     });
+	$( "#login-form" ).dialog({
+		autoOpen: {% if login_form.errors %}true{% else %}false{% endif %},
+		height: 380,
+		width: 450,
+		modal: true,
+	});
+    $(".login-button").button({
+        icons: {
+            primary: "ui-icon-person",
+        }
+    }).click(function(){
+		$( "#login-form" ).dialog( "open" );
+		return false;
+	});
+
+	$( "input:submit" ).button();
+	$(".logme-button").button({
+		icons: {
+			primary: "ui-icon-lightbulb"
+		}
+	}).click(function(){
+		window.location = "/?next="+window.location;
+	});
   });
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-3636359-3']);

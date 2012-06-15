@@ -9,6 +9,7 @@ from os import getenv
 urlpatterns = patterns('clc.views',
     (r'^$', 'index'),
     (r'^logout$', 'logout'),
+    (r'^login$', 'login'),
     (r'^delete$', 'delete'),
     (r'^add$', 'add'),
     (r'^send$', 'send'),

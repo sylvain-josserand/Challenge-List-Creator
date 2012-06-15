@@ -73,6 +73,7 @@ def display(request, list_name):
         header = _("%(name)s's challenge list") % {'name':cl.owner.username.title()}
 
     challenge_form = ChallengeForm()
+    login_form = LoginForm()
     return render_to_response(
         'display.html', locals(), context_instance=RequestContext(request)
     )
@@ -284,6 +285,7 @@ def add(request):
             challenge_list = cl,
         )
         copy_ci.save()
+        return HttpResponse(original_ci.id)
     elif hidden == "category":    
         c = Category(
             owner=request.user, 
@@ -300,6 +302,27 @@ def add(request):
         return HttpResponse("ok")
 
     return HttpResponse(0)
+
+def login(request):
+    login_form = None
+    if request.method == 'POST':
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            username = request.POST['username'].lower()
+            password = request.POST['password']
+            user = auth.authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    auth.login(request, user)
+                    return HttpResponse("ok;" + _("Login successful."))
+                else:
+                    return HttpResponse("error;" + _("Disabled account."))
+            else:
+                return HttpResponse("error;" + _("Invalid username and/or password."))
+        else:
+            return HttpResponse("error;" + _("Invalid post data."))
+    else:
+        return HttpResponse("error;" + _("You should try a post request."))
 
 def index(request):
     signup_form = login_form = None
@@ -366,5 +389,5 @@ def index(request):
 
 def logout(request):
     auth.logout(request)
-    return HttpResponseRedirect("/") 
+    return HttpResponseRedirect(request.GET.get("next","/")) 
 

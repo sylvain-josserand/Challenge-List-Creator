@@ -56,31 +56,6 @@
 	</form>
     <br />
     <br />
-    <form action="" method="post">{% csrf_token %}
-     <div class="horizontal_form">
-      <div class="header">{% trans "Log in" %}</div>
-      {% for field in login_form.visible_fields %}
-       <div class="item">
-        <div class="label">{{ field.label_tag }}</div>
-        <div class="data">{{ field }}</div>
-        {% if field.errors %}
-         <div class="ui-widget" style="float:left;padding: .3em">
-          <div class="ui-state-highlight ui-corner-all" style="padding: 0 .7em;"> 
-           <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>{{ field.errors|join:", " }}</p>
-          </div>
-         </div>
-        {% endif %}
-        <div class="description">{{ field.help_text }}</div>
-       </div>
-      {% endfor %}
-     </div>
-     {% for hidden in login_form.hidden_fields %}
-      {{ hidden }}
-     {% endfor %}
-     <center><a href="" id="send-password">{% trans "Forgot your password?" %}</a></center>
-     <br />
-     <input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
-    </form>
     <div id="send-password-form" title="{% trans "Reset your password"%}">
       <p class="validateTips">{% trans "Please enter your email address so we can send you instructions to reset your password." %}</p>
       <form>
@@ -97,14 +72,6 @@
  <br />
  <script type="text/javascript">
 	$(function(){ 
-		$( "input:submit" ).button();
-		$(".logme-button").button({
-			icons: {
-				primary: "ui-icon-lightbulb"
-			}
-		}).click(function(){
-			window.location = "/?next="+window.location;
-		});
 		$( "#send-password-form" ).dialog({
 			autoOpen: false,
 			height: 240,

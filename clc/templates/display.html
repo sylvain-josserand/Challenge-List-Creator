@@ -218,7 +218,8 @@ $(function(){
 				"challenge_instance": this.id.split('-').pop()
 			}, 
             function(data){
-                $("#challenge-row-"+data).fadeOut(500).fadeIn(500);
+                $("#challenge-row-"+data).fadeOut(250).fadeIn(250);
+				$("#grab-"+data+" span").text("{% trans "Challenge accepted!" %}");
             }
         );
     });
