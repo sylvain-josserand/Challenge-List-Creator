@@ -248,56 +248,57 @@ def send(request):
 def add(request):
     if request.method != 'POST':
         return HttpResponse(__("You should try a POST request"))
-        
-    hidden = request.POST.get("hidden", False)
+    post = {}
+    for key, value in request.POST.items():
+        if value == "":
+            post[key] = None
+        else:
+            post[key] = value
+
+    hidden = post.get("hidden", False)
     cl = ChallengeList.objects.get(owner=request.user)
     if hidden == "challenge":
         try:
-            c = Challenge.objects.get( description = request.POST["description"] )
+            c = Challenge.objects.get( description = post["description"] )
         except Challenge.DoesNotExist:
             try:
-                category = Category.objects.get(id=request.POST["category"])
+                category = Category.objects.get(id=post["category"])
             except Category.DoesNotExist:
                 category = None
             c = Challenge(
-                description=request.POST["description"],
+                description=post["description"],
                 category=category,
                 language=get_language(),
             )
             c.save()
-        if request.POST.get("due_date", None):
-            ci = ChallengeInstance(
-                challenge=c,
-                challenge_list=cl,
-                due_date=request.POST["due_date"],
-            )
-        else:
-            ci = ChallengeInstance(
-                challenge=c,
-                challenge_list=cl,
-            )
+        ci = ChallengeInstance(
+            challenge=c,
+            challenge_list=cl,
+            due_date=post.get("due_date", None),
+        )
         ci.save()
         return HttpResponse(ci.id)
     elif hidden == "challenge_instance":
-        original_ci = ChallengeInstance.objects.get(id=request.POST["challenge_instance"])
+        original_ci = ChallengeInstance.objects.get(id=post["challenge_instance"])
         copy_ci = ChallengeInstance(
             challenge = original_ci.challenge,
             challenge_list = cl,
+            origin = original_ci,
         )
         copy_ci.save()
         return HttpResponse(original_ci.id)
     elif hidden == "category":    
         c = Category(
             owner=request.user, 
-            name=request.POST["name"],
-            red=request.POST["red"],
-            green=request.POST["green"],
-            blue=request.POST["blue"],
+            name=post["name"],
+            red=post["red"],
+            green=post["green"],
+            blue=post["blue"],
         )
         c.save()
         return HttpResponse(c.id)
     elif hidden == "friend":
-        friend_cl = ChallengeList.objects.get(name=request.POST["name"])
+        friend_cl = ChallengeList.objects.get(name=post["name"])
         cl.friends.add(friend_cl)
         return HttpResponse("ok")
 
