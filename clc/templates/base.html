@@ -64,7 +64,7 @@
 <div id="login-form" title="{% trans "Log in" %}">
 	<p class="validateTips">{% trans "Enter your email and password to log in and edit your list." %}</p>
 
-    <form action="/?next={{ request.path }}" method="post">{% csrf_token %}
+    <form action="/?next={% firstof request.GET.next request.path %}" method="post">{% csrf_token %}
      <div class="horizontal_form">
       <div class="header">{% trans "Log in" %}</div>
       {% for field in login_form.visible_fields %}
@@ -157,8 +157,6 @@ $(function(){
 		icons: {
 			primary: "ui-icon-lightbulb"
 		}
-	}).click(function(){
-		window.location = "/?next="+window.location;
 	});
   });
   var _gaq = _gaq || [];
