@@ -259,7 +259,7 @@ def add(request):
     cl = ChallengeList.objects.get(owner=request.user)
     if hidden == "challenge":
         try:
-            c = Challenge.objects.get( description = post["description"] )
+            c = Challenge.objects.get(description=post["description"])
         except Challenge.DoesNotExist:
             try:
                 category = Category.objects.get(id=post["category"])
