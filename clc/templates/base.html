@@ -61,7 +61,7 @@
 <br /><br />
 <br /><br />
 <center><a href="" id="ideabox">{% trans "Idea box and problem report" %}</a> - <a href="http://www.intuitivo.fr">Web developer</a></center></p>
-<div id="login-form" title="{% trans "Send a message" %}">
+<div id="login-form" title="{% trans "Log in" %}">
 	<p class="validateTips">{% trans "Enter your email and password to log in and edit your list." %}</p>
 
     <form action="/?next={{ request.path }}" method="post">{% csrf_token %}
@@ -90,7 +90,7 @@
      <input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
     </form>
 </div>
-<div id="dialog-form" title="{% trans "Log in" %}">
+<div id="dialog-form" title="{% trans "Send a message" %}">
 	<p class="validateTips">{% trans "Email field is required if you want an answer." %}</p>
 
 	<form>

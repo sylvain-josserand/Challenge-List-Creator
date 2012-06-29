@@ -373,6 +373,11 @@ def index(request):
                     auth.login(request, user)
                     if "next" in request.GET:
                         return HttpResponseRedirect(request.GET["next"])
+                    elif request.path == "/":
+                        # I find this ugly.
+                        # If you know a better way to do this,
+                        # please email me: sylvain(at)intuitivo.fr
+                        return HttpResponseRedirect(user.username)
                     else:
                         return HttpResponseRedirect(user.username)
                 else:
