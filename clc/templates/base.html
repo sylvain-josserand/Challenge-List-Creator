@@ -48,6 +48,9 @@
 <a href="/" style="text-decoration:none;"><img src="/media/images/logo.png" style="border:0px;" alt="bucket list creator"/></a>
 <div id="logout">
 	{% if logged_in %}
+		{% if not mine %}
+			<a class="back-button" href="/{{ request.user }}">{% trans "Back to my list" %}</a><span width="16px">&nbsp;</span>
+		{% endif %}
 	<a class="logout-button" href="/logout?next={{ request.path }}">{% trans "Log out" %}</a>
 	{% else %}
 	<a class="login-button" href="">{% trans "Log in" %}</a>
@@ -158,6 +161,12 @@ $(function(){
 			primary: "ui-icon-lightbulb"
 		}
 	});
+    $(".back-button").button({
+        icons: {
+            primary: "ui-icon-arrowthick-1-w",
+            secondary: "ui-icon-script"
+        }
+    });
   });
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-3636359-3']);
