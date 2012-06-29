@@ -1,12 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-{% if logged_in and not mine %}
-    <a class="back-button" href="{{ request.user.challenge_list.name }}">{% trans "Back to my list" %}</a>
-    {% if not friend %}
-        <button class="add-friend-button">{% trans "Add to my friends" %}</button>
-    {% endif %}
-{% endif %}
 <div class="header">{{ header }}</div>
 <div id="challenges">
 {% for ci in challenge_instances %}
@@ -98,7 +92,6 @@
 	{% endif %}
 {% else %}
 	{% if logged_in %}
-		<a class="back-button" href="{{ request.user.challenge_list.name }}">{% trans "Back to my list" %}</a>
 		{% if not friend %}
 			<button class="add-friend-button">{% trans "Add to my friends" %}</button>
 		{% endif %}
