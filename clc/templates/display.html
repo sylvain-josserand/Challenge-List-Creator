@@ -36,8 +36,12 @@
 			</span>
 			<span class="cell action">
 				{% if mine %}<button class="delete-challenge-button" id="delete-{{ ci.id }}">{% trans "Delete" %}</button>
-				{% else %}{% if logged_in %}<button class="grab-button" id="grab-{{ ci.id }}">{% trans "Accept this challenge" %}</button>
-				{% else %}<button class="logme-button" id="logme-{{ ci.id }}">{% trans "Add this to YOUR list" %}</button>{% endif %}{% endif %}
+					{% if ci.origin %}<a class="back-button" href="{{ ci.origin.challenge_list.name }}">{% trans "Original" %}</a>{% endif %}
+				{% else %}
+					{% if logged_in %}<button class="grab-button" id="grab-{{ ci.id }}">{% trans "Accept this challenge" %}</button>
+					{% else %}<button class="login-button" id="logme-{{ ci.id }}">{% trans "Add this to YOUR list" %}</button>
+					{% endif %}
+				{% endif %}
 			</span>
 		</div>
 	{% endwith %}
@@ -63,7 +67,7 @@
 	{% for field in challenge_form.visible_fields %}
 		<td>{{ field }}</td>
 	{% endfor %}
-		<td><input type="submit" value="{% trans "Add" %}" id="add-challenge"/></td>
+		<td><input type="submit" value="{% trans "Add a new challenge" %}" id="add-challenge"/></td>
 	</tr>
 	</table>
 	{% for hidden in challenge_form.hidden_fields %}

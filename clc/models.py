@@ -39,6 +39,7 @@ class ChallengeInstance(models.Model):
     challenge = models.ForeignKey(Challenge, db_index=True, related_name="instances")
     progress = models.PositiveSmallIntegerField(default=0)
     due_date = models.DateField(blank=True, null=True, db_index=True)
+    origin = models.ForeignKey("self", verbose_name=_("origin"), blank=True, null=True, db_index=True) 
     def __unicode__(self):
         return repr((
             self.id,
