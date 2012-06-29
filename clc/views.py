@@ -33,7 +33,7 @@ class ChallengeForm(forms.ModelForm):
     class Meta:
         model = Challenge
         fields = ('description','category')
-    due_date = forms.DateField(required=False, label=_("Due date (optional)"))
+    due_date = forms.DateField(required=False, label=_("Due date YYYY-MM-DD (optional)"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="challenge")
     
 def message_render(request, message):
@@ -362,15 +362,7 @@ def index(request):
             if user is not None:
                 if user.is_active:
                     auth.login(request, user)
-                    if request.path == "/":
-                        # I find this ugly.
-                        # If you know a better way to do this,
-                        # please email me: sylvain(at)intuitivo.fr
-                        return HttpResponseRedirect(user.username)
-                    elif "next" in request.GET:
-                        return HttpResponseRedirect(request.GET["next"])
-                    else:
-                        return HttpResponseRedirect(user.username)
+                    return HttpResponseRedirect(request.GET.get("next", user.username))
                 else:
                     login_form._errors['username'] = ErrorList((_("Disabled account."),))
             else:
