@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 17:58+0200\n"
+"POT-Creation-Date: 2012-06-29 23:13+0200\n"
 "PO-Revision-Date: 2011-12-12 00:32+0100\n"
 "Last-Translator: Sylvain Josserand <joss82@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li?.org>\n"
@@ -25,6 +25,10 @@ msgstr "description"
 #: models.py:27
 msgid "category"
 msgstr "catégorie"
+
+#: models.py:42
+msgid "origin"
+msgstr "origine"
 
 #: views.py:21
 msgid "User name"
@@ -71,8 +75,8 @@ msgid "Enter your password"
 msgstr "Entrez votre mot de passe"
 
 #: views.py:36
-msgid "Due date (optional)"
-msgstr "Échéance (optionnelle)"
+msgid "Due date YYYY-MM-DD (optional)"
+msgstr "Échéance AAAA-MM-JJ (optionnelle)"
 
 #: views.py:49
 msgid ""
@@ -111,31 +115,31 @@ msgstr "Désolé, mais ce compte est désactivé."
 msgid "Sorry, but this account is invalid."
 msgstr "Désolé, mais ce compte est invalide."
 
-#: views.py:113 views.py:346
+#: views.py:113 views.py:337
 msgid "passwords mismatch"
 msgstr "Les mots de passe ne correspondent pas"
 
-#: views.py:317
+#: views.py:308
 msgid "Login successful."
 msgstr "Connecté avec succès"
 
-#: views.py:319 views.py:384
+#: views.py:310 views.py:367
 msgid "Disabled account."
 msgstr "Compte désactivé."
 
-#: views.py:321 views.py:386
+#: views.py:312 views.py:369
 msgid "Invalid username and/or password."
 msgstr "Nom d'utilisateur ou mot de passe invalide."
 
-#: views.py:323
+#: views.py:314
 msgid "Invalid post data."
 msgstr "Données post invalides."
 
-#: views.py:325
+#: views.py:316
 msgid "You should try a post request."
 msgstr "Essayez plutôt une requête POST."
 
-#: views.py:357
+#: views.py:348
 msgid ""
 "A user with the same name already exists. But the password you entered did "
 "not match."
@@ -143,7 +147,7 @@ msgstr ""
 "Un utilisateur avec le même nom existe déjà. Mais le mot de passe que vous "
 "avez entré ne correspond pas."
 
-#: views.py:362
+#: views.py:353
 msgid "Email already exists."
 msgstr "L'adresse email existe déjà."
 
@@ -165,7 +169,8 @@ msgstr "Boîte à idées et problèmes"
 
 #: templates/base.html:65
 msgid "Enter your email and password to log in and edit your list."
-msgstr "Entrez votre email et mot de passe pour vous connecter et éditer votre liste."
+msgstr ""
+"Entrez votre email et mot de passe pour vous connecter et éditer votre liste."
 
 #: templates/base.html:88
 msgid "Forgot your password?"
@@ -191,11 +196,11 @@ msgstr "Message"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: templates/display.html:5 templates/display.html.py:97
+#: templates/display.html:5 templates/display.html.py:101
 msgid "Back to my list"
 msgstr "Retour à ma liste"
 
-#: templates/display.html:7 templates/display.html.py:99
+#: templates/display.html:7 templates/display.html.py:103
 msgid "Add to my friends"
 msgstr "Ajouter à mes amis"
 
@@ -215,19 +220,23 @@ msgstr "Progrès"
 msgid "Due date"
 msgstr "Échéance"
 
-#: templates/display.html:38 templates/display.html.py:88
+#: templates/display.html:38 templates/display.html.py:92
 msgid "Delete"
 msgstr "Supprimer"
 
 #: templates/display.html:39
+msgid "Original"
+msgstr "Originel"
+
+#: templates/display.html:41
 msgid "Accept this challenge"
 msgstr "Accepter ce challenge"
 
-#: templates/display.html:40
+#: templates/display.html:42
 msgid "Add this to YOUR list"
 msgstr "Ajouter à VOTRE liste"
 
-#: templates/display.html:45
+#: templates/display.html:49
 msgid ""
 "You can now create your first challenge. Enter a description in the box "
 "using your own words, then select a category and click on Add a new "
@@ -237,31 +246,27 @@ msgstr ""
 "description en utilisant vos propres mots, puis choisissez une catégorie et "
 "validez en cliquant sur Ajouter un nouveau challenge"
 
-#: templates/display.html:49
+#: templates/display.html:53
 msgid "en_US"
 msgstr "fr_FR"
 
-#: templates/display.html:53
+#: templates/display.html:57 templates/display.html.py:70
 msgid "Add a new challenge"
 msgstr "Ajouter un nouveau challenge"
 
-#: templates/display.html:66
-msgid "Add"
-msgstr "Ajouter"
-
-#: templates/display.html:76
+#: templates/display.html:80
 msgid "Your friends"
 msgstr "Vos amis"
 
-#: templates/display.html:81
+#: templates/display.html:85
 msgid "Name"
 msgstr "Nom"
 
-#: templates/display.html:82
+#: templates/display.html:86
 msgid "Action"
 msgstr "Action"
 
-#: templates/display.html:222
+#: templates/display.html:226
 msgid "Challenge accepted!"
 msgstr "Challenge accepté!"
 
@@ -305,6 +310,9 @@ msgstr "Envoyez-moi un email"
 msgid "Enter your new password twice"
 msgstr ""
 "Entrez votre nouveau mot de passe à deux reprises dans les champs vides"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"
 
 #~ msgid "French"
 #~ msgstr "Français"
