@@ -3,15 +3,18 @@ import os
 
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-DEBUG = True
-#DEBUG = False
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 # DJANGO_MEDIA = True <--- Put this in system env. Example: # DJANGO_MEDIA=True ./manage.py runserver
 
 LOGIN_URL = "/"
 ADMINS = (
-    ("Admin", os.getenv('ADMIN_EMAIL'))
+    ("Admin", os.getenv('ADMIN_EMAIL')),
 )
+EMAIL_HOST=os.getenv('SMTP_SERVER')
+EMAIL_HOST_USER=os.getenv('SMTP_USERNAME')
+EMAIL_HOST_PASSWORD=os.getenv('SMTP_PASSWORD')
+SERVER_EMAIL=os.getenv('ADMIN_EMAIL')
 
 MANAGERS = ADMINS
 
