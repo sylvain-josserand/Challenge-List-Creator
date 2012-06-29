@@ -23,8 +23,8 @@ class Category(models.Model):
         return self.name
 
 class Challenge(models.Model):
-    description = models.CharField(_("description"), max_length=200)
-    category = models.ForeignKey(Category, verbose_name=_("category"), db_index=True, blank=True, null=True)
+    description = models.CharField(_("description"), max_length=200, unique=True)
+    category = models.ForeignKey(Category, verbose_name=_("category"), db_index=True, blank=True, null=True, on_delete=models.SET_NULL)
     language = models.CharField(max_length=10, null=True, db_index=True)
     def __unicode__(self):
         return repr((
@@ -39,7 +39,7 @@ class ChallengeInstance(models.Model):
     challenge = models.ForeignKey(Challenge, db_index=True, related_name="instances")
     progress = models.PositiveSmallIntegerField(default=0)
     due_date = models.DateField(blank=True, null=True, db_index=True)
-    origin = models.ForeignKey("self", verbose_name=_("origin"), blank=True, null=True, db_index=True) 
+    origin = models.ForeignKey("self", verbose_name=_("origin"), blank=True, null=True, db_index=True, on_delete=models.SET_NULL) 
     def __unicode__(self):
         return repr((
             self.id,

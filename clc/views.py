@@ -194,7 +194,7 @@ def delete(request):
 
     if "challenge_instance" in request.POST:
         id = request.POST["challenge_instance"]
-        ci = ChallengeInstance.objects.get(id=id)
+        ci = ChallengeInstance.objects.get(pk=id)
         ci.delete()
         return HttpResponse(id)
     elif "friend" in request.POST:
@@ -362,13 +362,13 @@ def index(request):
             if user is not None:
                 if user.is_active:
                     auth.login(request, user)
-                    if "next" in request.GET:
-                        return HttpResponseRedirect(request.GET["next"])
-                    elif request.path == "/":
+                    if request.path == "/":
                         # I find this ugly.
                         # If you know a better way to do this,
                         # please email me: sylvain(at)intuitivo.fr
                         return HttpResponseRedirect(user.username)
+                    elif "next" in request.GET:
+                        return HttpResponseRedirect(request.GET["next"])
                     else:
                         return HttpResponseRedirect(user.username)
                 else:
