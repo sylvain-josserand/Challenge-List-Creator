@@ -35,7 +35,7 @@ class ChallengeForm(forms.ModelForm):
         fields = ('description','category')
     due_date = forms.DateField(required=False, label=_("Due date (optional)"))
     hidden = forms.CharField(widget=forms.HiddenInput, initial="challenge")
-
+    
 def message_render(request, message):
     return render_to_response(
         'message.html', {'message':_(message)},  context_instance=RequestContext(request)
@@ -259,7 +259,7 @@ def add(request):
     cl = ChallengeList.objects.get(owner=request.user)
     if hidden == "challenge":
         try:
-            c = Challenge.objects.get( description = post["description"] )
+            c = Challenge.objects.get(description=post["description"])
         except Challenge.DoesNotExist:
             try:
                 category = Category.objects.get(id=post["category"])
@@ -287,16 +287,6 @@ def add(request):
         )
         copy_ci.save()
         return HttpResponse(original_ci.id)
-    elif hidden == "category":    
-        c = Category(
-            owner=request.user, 
-            name=post["name"],
-            red=post["red"],
-            green=post["green"],
-            blue=post["blue"],
-        )
-        c.save()
-        return HttpResponse(c.id)
     elif hidden == "friend":
         friend_cl = ChallengeList.objects.get(name=post["name"])
         cl.friends.add(friend_cl)
