@@ -260,6 +260,9 @@ def add(request):
     if hidden == "challenge":
         try:
             c = Challenge.objects.get(description=post["description"])
+        except Challenge.MultipleObjectsReturned:
+            # Quick fix until database integrity is guaranteed
+            c = Challenge.objects.filter(description=post["description"])[0]
         except Challenge.DoesNotExist:
             try:
                 category = Category.objects.get(id=post["category"])

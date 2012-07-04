@@ -117,7 +117,7 @@ $(function(){
 		onSelect: function(dateText, inst){
 			$.post(
 				"/save", 
-				{"challenge_instance": this.id.split("-").pop(), "due_date": dateText} 
+				{"challenge_instance": this.id.split("-")[1], "due_date": dateText} 
 			);
 		}
 	});
@@ -152,7 +152,7 @@ $(function(){
     }).click(function() {
         $.post(
             "/delete", 
-            {"challenge_instance": this.id.split('-').pop()}, 
+            {"challenge_instance": this.id.split('-')[1]}, 
             function(data){
                 $("#challenge-row-"+data).animate({opacity:0}, 250).animate({height:0},250, function(){$("#challenge-row-"+data).remove();});
             }
@@ -165,7 +165,7 @@ $(function(){
     }).click(function() {
         $.post(
             "/delete", 
-            {"friend": this.id.split('-').pop()}, 
+            {"friend": this.id.split('-')[1]}, 
             function(data){
                 $("#friend-row-"+data).animate({opacity:0},250).animate({height:0},250, function(){$("#friend-row-"+data).remove();});
             }
@@ -206,7 +206,7 @@ $(function(){
             "/add", 
             {
 				"hidden":"challenge_instance",
-				"challenge_instance": this.id.split('-').pop()
+				"challenge_instance": this.id.split('-')[1]
 			}, 
             function(data){
                 $("#challenge-row-"+data).fadeOut(250).fadeIn(250);
@@ -225,7 +225,7 @@ $(function(){
                 checkCompleted(this);
                 $.post(
                     "/save", 
-                    {"challenge_instance": this.id.split("-").pop(), "progress": $(this).slider("value")} 
+                    {"challenge_instance": this.id.split("-")[1], "progress": $(this).slider("value")} 
                 );
             }
         });
