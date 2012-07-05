@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render_to_response, redirect
 from django import forms
 from django.db import IntegrityError
+from django.db.models import Count
 from clc.models import *
 from django.contrib import auth 
 from django.template import RequestContext
@@ -294,7 +295,6 @@ def add(request):
         friend_cl = ChallengeList.objects.get(name=post["name"])
         cl.friends.add(friend_cl)
         return HttpResponse("ok")
-
     return HttpResponse(0)
 
 def login(request):
@@ -375,7 +375,8 @@ def index(request):
         login_form = LoginForm()
     if not signup_form:
         signup_form = SignupForm()
-    challenge_instances = ChallengeInstance.objects.filter(challenge__language=get_language()).order_by("-id")[:20]
+    challenges = Challenge.objects.filter(language=get_language()).annotate(num_ci=Count('instances')).order_by('-num_ci').all()[:10]
+    #.order_by("-id")[:20]
     return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
 def logout(request):

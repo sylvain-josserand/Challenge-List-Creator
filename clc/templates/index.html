@@ -10,19 +10,21 @@
      <h2>{% trans "Create a bucket list and share it with your friends... or not!" %}</h2><br/>
      <h3>{% trans "Some examples of challenges:" %}</h3>
      <br />
-     {% for ci in challenge_instances %}
+     {% for c in challenges %}
       {% if forloop.first %}
        <div class="row table_head">
         <span class="cell description">{% trans "Description" %}</span>
         <span class="cell category">{% trans "Category" %}</span>
        </div>
 	  {% endif %}
-      {% with ci.challenge as c %}
-       <div class="row" id="challenge-row-{{ ci.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
-        <span class="cell description"><a href="/{{ ci.challenge_list.name }}">{{ c.description }}</a></span>
-        <span class="cell category">{{ c.category.name }}</span>
-	   </div>
-      {% endwith %}
+	  {% for ci in c.instances.all %}
+		{% if forloop.first %}
+		   <div class="row" id="challenge-row-{{ ci.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
+			<span class="cell description"><a href="/{{ ci.challenge_list.name }}">{{ c.description }}</a></span>
+			<span class="cell category">{{ c.category.name }}</span>
+		   </div>
+		{% endif %}
+      {% endfor %}
      {% endfor %}
      <br />
     </div>

@@ -46,7 +46,7 @@
 </head>
 <body>
 <a href="/" style="text-decoration:none;"><img src="/media/images/logo.png" style="border:0px;" alt="bucket list creator"/></a>
-<div id="logout">
+<div id="logout" align="right">
 	{% if logged_in %}
 		{% if not mine %}
 			<a class="back-button" href="/{{ request.user }}">{% trans "Back to my list" %}</a><span width="16px">&nbsp;</span>
@@ -54,6 +54,32 @@
 	<a class="logout-button" href="/logout?next={{ request.path }}">{% trans "Log out" %}</a>
 	{% else %}
 	<a class="login-button" href="">{% trans "Log in" %}</a>
+	<!--<br /><br />
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '383681641687305', // App ID
+            channelUrl : '//www.challengelistcreator.com/media/channel-{% trans "en_US" %}.html', // Channel File
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+          });
+        };
+        // Load the SDK Asynchronously
+        (function(d){
+           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/{% trans "en_US" %}/all.js";
+           ref.parentNode.insertBefore(js, ref);
+         }(document));
+      </script>
+
+      <div class="fb-login-button" scope="email, publish_actions" style="align:left;">
+        {% trans "Login with Facebook" %}
+      </div>
+	  -->
 	{% endif %}
 </div>
 <div id="content">

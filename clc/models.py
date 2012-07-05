@@ -40,6 +40,8 @@ class ChallengeInstance(models.Model):
     progress = models.PositiveSmallIntegerField(default=0)
     due_date = models.DateField(blank=True, null=True, db_index=True)
     origin = models.ForeignKey("self", verbose_name=_("origin"), blank=True, null=True, db_index=True, on_delete=models.SET_NULL) 
+    class Meta:
+        ordering = ('-id',)
     def __unicode__(self):
         return repr((
             self.id,
