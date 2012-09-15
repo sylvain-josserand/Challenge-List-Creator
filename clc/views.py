@@ -15,6 +15,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
 
+from base64 import b64encode, b64decode
 import datetime
 from os import getenv
 
@@ -88,7 +89,7 @@ def reset_password(request, list_name):
     authkey = request.GET.get('authkey', None)
     if not authkey:
         return message_render(request, _("Sorry, but the authentication key is missing."))
-    if authkey != user.password.split('$')[-1]:
+    if b64decode(authkey) != user.password.split('$')[-1]:
         return message_render(request, _("Sorry, but the authentication key is wrong."))
     if request.method == 'GET':
         signup_form = SignupForm({'username':user.username, 'email':user.email, 'hidden':'signup'})
@@ -155,7 +156,7 @@ The webmaster at challenge list creator.<br/>
             user = auth.models.User.objects.get(email=email)
         except auth.models.User.DoesNotExist, e:
             return HttpResponse(str(e))
-        d = {'username':user.username, 'authkey':user.password.split('$')[-1]}
+        d = {'username':user.username, 'authkey':b64encode(user.password.split('$')[-1])}
         text = text_template % d
         html = html_template % d
         msg = MIMEMultipart('alternative')
@@ -375,7 +376,7 @@ def index(request):
         login_form = LoginForm()
     if not signup_form:
         signup_form = SignupForm()
-    challenges = Challenge.objects.filter(language=get_language()).annotate(num_ci=Count('instances')).order_by('-num_ci').all()[:10]
+    challenges = Challenge.objects.filter(language=get_language()).annotate(num_ci=Count('instances')).order_by('-num_ci')[:50]
     #.order_by("-id")[:20]
     return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
