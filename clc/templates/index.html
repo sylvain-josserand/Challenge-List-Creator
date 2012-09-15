@@ -53,55 +53,16 @@
        {{ hidden }}
       {% endfor %}
       <br />
+	  <center><a href="" class="send-password">{% trans "Forgot your password?" %}</a></center>
+      <br />
       <input type="submit" value="{% trans "Sign me up" %}" style="left:160px;" />
 	 </div>
 	</form>
     <br />
     <br />
-    <div id="send-password-form" title="{% trans "Reset your password"%}">
-      <p class="validateTips">{% trans "Please enter your email address so we can send you instructions to reset your password." %}</p>
-      <form>
-      <fieldset>
-       <label for="ideabox-email">{% trans "Email" %}</label>
-       <input type="text" name="email" id="send-password-email" value="" class="text ui-widget-content ui-corner-all" />
-      </fieldset>
-     </form>
-    </div>
    </div>
   </div>
  </div>
  <br />
  <br />
- <script type="text/javascript">
-	$(function(){ 
-		$( "#send-password-form" ).dialog({
-			autoOpen: false,
-			height: 240,
-			width: 350,
-			modal: true,
-			buttons: [
-				{
-					text: "{% trans "Send me an email" %}",
-					click: function() {
-						$( this ).dialog( "close" );
-						$.post(
-							"/send_password", 
-							{"email": $("#send-password-email").val(),} 
-						);
-					}
-				},
-				{
-					text: "{% trans "Cancel" %}",
-					click: function() {
-						$( this ).dialog( "close" );
-					}
-				}
-			]
-		});
-		$("#send-password").click(function(){
-			$( "#send-password-form" ).dialog( "open" );
-			return false;
-		});
-	});
- </script>
 {% endblock content %}

@@ -114,7 +114,7 @@
      {% for hidden in login_form.hidden_fields %}
       {{ hidden }}
      {% endfor %}
-     <center><a href="" id="send-password">{% trans "Forgot your password?" %}</a></center>
+     <center><a href="" class="send-password">{% trans "Forgot your password?" %}</a></center>
      <br />
      <input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
     </form>
@@ -131,7 +131,46 @@
 	</fieldset>
 	</form>
 </div>
+<div id="send-password-form" title="{% trans "Reset your password"%}">
+  <p class="validateTips">{% trans "Please enter your email address so we can send you instructions to reset your password." %}</p>
+  <form>
+  <fieldset>
+   <label for="ideabox-email">{% trans "Email" %}</label>
+   <input type="text" name="email" id="send-password-email" value="" class="text ui-widget-content ui-corner-all" />
+  </fieldset>
+ </form>
+</div>
 <script type="text/javascript">
+	$(function(){ 
+		$( "#send-password-form" ).dialog({
+			autoOpen: false,
+			height: 240,
+			width: 350,
+			modal: true,
+			buttons: [
+				{
+					text: "{% trans "Send me an email" %}",
+					click: function() {
+						$( this ).dialog( "close" );
+						$.post(
+							"/send_password", 
+							{"email": $("#send-password-email").val(),} 
+						);
+					}
+				},
+				{
+					text: "{% trans "Cancel" %}",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});
+		$(".send-password").click(function(){
+			$( "#send-password-form" ).dialog( "open" );
+			return false;
+		});
+	});
 $(function(){ 
 	$( "#dialog-form" ).dialog({
 		autoOpen: false,
