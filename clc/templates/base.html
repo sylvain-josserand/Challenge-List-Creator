@@ -118,6 +118,7 @@
      <br />
      <input type="submit" value="{% trans "Log me in"%}" style="left:160px;" />
     </form>
+	<p><br /><center><a class="button" href="/?next={% firstof request.GET.next request.path %}">Click here to create a free account</a></p>
 </div>
 <div id="dialog-form" title="{% trans "Send a message" %}">
 	<p class="validateTips">{% trans "Email field is required if you want an answer." %}</p>
@@ -196,6 +197,7 @@ $(function(){
 			}
 		]
 	});
+	$(".button").button();
 	$("#ideabox").click(function(){
 		$( "#dialog-form" ).dialog( "open" );
 		return false;

@@ -17,14 +17,12 @@
         <span class="cell category">{% trans "Category" %}</span>
        </div>
 	  {% endif %}
-	  {% for ci in c.instances.all %}
-		{% if forloop.first %}
+	  {% with c.instances.all|first as ci %}
 		   <div class="row" id="challenge-row-{{ ci.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
 			<span class="cell description"><a href="/{{ ci.challenge_list.name }}">{{ c.description }}</a></span>
 			<span class="cell category">{{ c.category.name }}</span>
 		   </div>
-		{% endif %}
-      {% endfor %}
+      {% endwith %}
      {% endfor %}
      <br />
     </div>

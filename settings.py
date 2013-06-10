@@ -3,7 +3,7 @@ import os
 
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-DEBUG = False
+DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 # DJANGO_MEDIA = True <--- Put this in system env. Example: # DJANGO_MEDIA=True ./manage.py runserver
 
@@ -97,7 +97,7 @@ TEMPLATE_DIRS = (
 gettext = lambda s: s
 
 LANGUAGES = (
-    ('fr', gettext('French')),
+#    ('fr', gettext('French')),
     ('en', gettext('English')),
 )
 
