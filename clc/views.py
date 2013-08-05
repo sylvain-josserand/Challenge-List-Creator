@@ -376,7 +376,7 @@ def index(request):
         login_form = LoginForm()
     if not signup_form:
         signup_form = SignupForm()
-    challenges = Challenge.objects.filter(language=get_language()).annotate(num_ci=Count('instances')).order_by('-num_ci')[:50]
+    challenges = Challenge.objects.filter(language=get_language()).annotate(num_ci=Count('instances')).order_by('-num_ci')[:150]
     #.order_by("-id")[:20]
     return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 

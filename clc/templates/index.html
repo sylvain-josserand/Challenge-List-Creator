@@ -17,14 +17,12 @@
         <span class="cell category">{% trans "Category" %}</span>
        </div>
 	  {% endif %}
-	  {% for ci in c.instances.all %}
-		{% if forloop.first %}
+	  {% with c.instances.all|first as ci %}
 		   <div class="row" id="challenge-row-{{ ci.id }}" style="background-color:rgb({{c.category.red}},{{c.category.green}},{{c.category.blue}});">
 			<span class="cell description"><a href="/{{ ci.challenge_list.name }}">{{ c.description }}</a></span>
 			<span class="cell category">{{ c.category.name }}</span>
 		   </div>
-		{% endif %}
-      {% endfor %}
+      {% endwith %}
      {% endfor %}
      <br />
     </div>
@@ -53,55 +51,16 @@
        {{ hidden }}
       {% endfor %}
       <br />
+	  <center><a href="" class="send-password">{% trans "Forgot your password?" %}</a></center>
+      <br />
       <input type="submit" value="{% trans "Sign me up" %}" style="left:160px;" />
 	 </div>
 	</form>
     <br />
     <br />
-    <div id="send-password-form" title="{% trans "Reset your password"%}">
-      <p class="validateTips">{% trans "Please enter your email address so we can send you instructions to reset your password." %}</p>
-      <form>
-      <fieldset>
-       <label for="ideabox-email">{% trans "Email" %}</label>
-       <input type="text" name="email" id="send-password-email" value="" class="text ui-widget-content ui-corner-all" />
-      </fieldset>
-     </form>
-    </div>
    </div>
   </div>
  </div>
  <br />
  <br />
- <script type="text/javascript">
-	$(function(){ 
-		$( "#send-password-form" ).dialog({
-			autoOpen: false,
-			height: 240,
-			width: 350,
-			modal: true,
-			buttons: [
-				{
-					text: "{% trans "Send me an email" %}",
-					click: function() {
-						$( this ).dialog( "close" );
-						$.post(
-							"/send_password", 
-							{"email": $("#send-password-email").val(),} 
-						);
-					}
-				},
-				{
-					text: "{% trans "Cancel" %}",
-					click: function() {
-						$( this ).dialog( "close" );
-					}
-				}
-			]
-		});
-		$("#send-password").click(function(){
-			$( "#send-password-form" ).dialog( "open" );
-			return false;
-		});
-	});
- </script>
 {% endblock content %}
