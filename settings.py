@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 
 LOGIN_URL = "/"
 ADMINS = (
-    ("Admin", os.getenv('ADMIN_EMAIL')),
+    # ("Admin", os.getenv('ADMIN_EMAIL')),
 )
 EMAIL_HOST=os.getenv('SMTP_SERVER')
 EMAIL_HOST_USER=os.getenv('SMTP_USERNAME')
